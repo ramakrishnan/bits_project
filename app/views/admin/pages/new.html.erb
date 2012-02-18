@@ -16,13 +16,21 @@
 		</div>	
 	<% end %>
 </div>
+<br/>
+<input type="button" id="add_placeholder" value="Add Placeholder"/>
 
-<div class="page_template">
+<div id="page_layout">
+	
 </div>	
 
-<div class="create_placeholders">
-	<div class="width_966">F</div>
-	<div class="width_485">C</div>
-	<div class="width_300">B</div>
-	<div class="width_165">A</div>	
+<div id="available_placeholders">
+	<div data-width="966" class="width_966">F</div>
+	<div data-width="485" class="width_485">C</div>
+	<div data-width="300" class="width_300">B</div>
+	<div data-width="165" class="width_165">A</div>	
 </div>
+
+<%= content_for :internal_javascript do %>
+	$("#available_placeholders div").click(Admin.selectPlaceholder);
+	$("#add_placeholder").click(Admin.addPlaceholder);
+<% end %>	
