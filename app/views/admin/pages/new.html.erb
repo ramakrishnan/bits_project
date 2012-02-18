@@ -1,0 +1,28 @@
+<h1> Create a New Page </h1>
+<p> Form a layout by adding different placeholders. </p>
+
+<div class="admin_form">	
+	<%= form_tag admin_pages_path do %>
+		<div class="element">
+			<label for"page_name">Name</label>
+			<%= text_field_tag :page, :name %>
+		</div>
+		<div class="element">
+			<label for"page_slug">Slug</label>
+			<%= text_field_tag :page, :slug %>
+		</div>		
+		<div class="form_end">
+			<%= submit_tag "Create"%>
+		</div>	
+	<% end %>
+</div>
+
+<div class="page_template">
+</div>	
+
+<div class="create_placeholders">
+	<div class="width_966">F</div>
+	<div class="width_485">C</div>
+	<div class="width_300">B</div>
+	<div class="width_165">A</div>	
+</div>

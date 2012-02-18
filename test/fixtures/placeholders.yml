@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  row: 1
+  column: 1
+  color: MyString
+  width: 1
+  page_id: 1
+
+two:
+  row: 1
+  column: 1
+  color: MyString
+  width: 1
+  page_id: 1
