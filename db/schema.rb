@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20120219152354) do
 
-  create_table "page_placeholders", :force => true do |t|
-    t.integer  "page_id"
-    t.integer  "placeholder_id"
-    t.integer  "row"
-    t.integer  "column"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.string   "slug"
@@ -38,9 +29,18 @@ ActiveRecord::Schema.define(:version => 20120219152354) do
   end
 
   create_table "placeholders", :force => true do |t|
-    t.string   "color"
+    t.integer  "page_id"
+    t.integer  "template_id"
+    t.integer  "row"
+    t.integer  "column"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "templates", :force => true do |t|
     t.string   "name"
     t.integer  "width"
+    t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
