@@ -1,4 +1,4 @@
 class Page < ActiveRecord::Base
-	has_many :layouts
-	has_many :placeholders, :through => :layouts
+	has_many :placeholders
+	has_many :templates, :through => :placeholders
 end

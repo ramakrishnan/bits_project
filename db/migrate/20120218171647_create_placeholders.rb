@@ -1,9 +1,10 @@
 class CreatePlaceholders < ActiveRecord::Migration
   def change
     create_table :placeholders do |t|
-      t.string :color
-      t.string :name
-      t.integer :width
+      t.integer :page_id	
+      t.integer :template_id
+      t.integer :row
+      t.integer :column
 
       t.timestamps
     end

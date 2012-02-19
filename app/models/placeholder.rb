@@ -1,4 +1,6 @@
 class Placeholder < ActiveRecord::Base
-	has_many :layouts
-	has_many :pages, :through => :layouts
+	belongs_to :page
+	belongs_to :template
+	has_many :placeholder_widgets
+	has_many :widgets, :through => :placeholder_widgets
 end
