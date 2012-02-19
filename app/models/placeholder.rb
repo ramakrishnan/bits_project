@@ -1,3 +1,4 @@
 class Placeholder < ActiveRecord::Base
-	belongs_to :page
+	has_many :layouts
+	has_many :pages, :through => :layouts
 end

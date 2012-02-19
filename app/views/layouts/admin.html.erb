@@ -11,9 +11,9 @@
 	<%= yield %>
 </div>
 
-<%= javascript_tag do %>
+<%= javascript_tag do -%>
 	$(document).ready( function () {
-		<%= yield :internal_javascript %>
+		<%= yield :internal_javascript -%>
 	});
 <% end %>
 
