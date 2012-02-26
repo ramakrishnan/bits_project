@@ -10,9 +10,14 @@
 		<div class="element">
 			<label for"page_slug">Slug</label>
 			<%= text_field :page, :slug %>
-		</div>		
+		</div>
+		<div id="placeholders"style="display:none;">
+			<input type="hidden" value="1">
+			<input type="hidden" value="2">
+			<input type="hidden" value="3">
+		</div>
 		<div class="form_end">
-			<%= submit_tag "Create"%>
+			<%= submit_tag "Create", :id => "save_page"%>
 		</div>	
 	<% end %>
 </div>
@@ -22,7 +27,10 @@
 <div id="build_layout">
 	<div id="available_placeholders">
 		<% @templates.each do |template| %>
-			<%= content_tag :div, template.name, :class => "width_#{template.width}", "data-width" => template.width %>
+			<%= content_tag :div, template.name, 
+				:class => "width_#{template.width}", 
+				"data-width" => template.width,
+				"data-template_id" => template.id %>
 		<% end %>
 	</div>	
 	<div id="page_layout">
@@ -30,6 +38,5 @@
 </div>
 
 <%= content_for :internal_javascript do %>
-	$("#available_placeholders div").click(Admin.selectPlaceholder);
-	$("#add_placeholder").click(Admin.addPlaceholder);
+	Admin.page.initilize();
 <% end %>	
