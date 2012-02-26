@@ -21,6 +21,8 @@ $scaled_966: (966/$scale_by);
 $scaled_300: (300/$scale_by);
 $scaled_485: (485/$scale_by);
 $scaled_165: (165/$scale_by);
+
+
 @mixin placeholder_space {
 	height:20px;
 	margin-top:#{(8/$scale_by)}px;
@@ -31,10 +33,6 @@ $scaled_165: (165/$scale_by);
 	}
 }
 
-#page_layout {
-	width:900px;
-	min-height:300px;
-}
 
 #build_layout {
 	width:990px;
@@ -43,6 +41,7 @@ $scaled_165: (165/$scale_by);
 		float:left;
 		width:#{$scaled_966+10}px;
 }
+
 #page_layout {
 		float:left;
 		width:#{$scaled_966+10}px;

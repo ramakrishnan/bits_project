@@ -12,7 +12,7 @@
 		<td><%= index +1 %></td>
 		<td><%= page.name %></td>
 		<td><%= page.slug %></td>
-	<td> <%= link_to "(+) Widgets", "#"%> </td>
+	<td> <%= link_to "(+) Widgets", admin_page_widgets_path(page) %> </td>
 	</tr>
 	<% end %>
 </table>
