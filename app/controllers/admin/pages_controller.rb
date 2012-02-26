@@ -8,19 +8,22 @@ layout 'admin'
 		end		
 		@page = Page.new(params[:page])
 		if @page.save
-			puts rows.class
-			puts "//////////////"
 			rows.each do |row, columns|
-				puts columns.inspect
-				puts columns.class
 				columns.each_with_index do |template, index|
 					index = index + 1
 					@page.placeholders.create(:row => row, :column => index,
 						:template_id => template)
 				end
 			end
+			redirect_to :action => new_admin_page_path	
+		else
+			flash[:message] = "Please check the following fields"
+			render :action => "new"
 		end
-		redirect_to :action => new_admin_page_path
+	end
+	
+	def index
+		@pages = Page.all
 	end
 	
 	def new

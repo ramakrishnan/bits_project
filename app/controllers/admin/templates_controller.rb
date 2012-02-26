@@ -1,7 +1,7 @@
 class Admin::TemplatesController < ApplicationController
 layout 'admin'
 	def index
-		@templates = Template.find(:all)
+		@templates = Template.all
 	end
 		
 	def create

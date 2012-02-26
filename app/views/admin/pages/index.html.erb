@@ -1,0 +1,18 @@
+<h2> List all available pages </h2>
+<%= link_to "Add New page", new_admin_page_path %>
+<table width="100%" align="center" cellspacing=10 cellpadding=10>
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>Width</th>
+		<th>Manage widgets</th>
+	</tr>
+	<% @pages.each_with_index do |page, index|%>
+	<tr>
+		<td><%= index +1 %></td>
+		<td><%= page.name %></td>
+		<td><%= page.slug %></td>
+	<td> <%= link_to "(+) Widgets", "#"%> </td>
+	</tr>
+	<% end %>
+</table>
