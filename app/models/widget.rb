@@ -1,4 +1,4 @@
 class Widget < ActiveRecord::Base
-	has_many :placeholder_widgets
-	has_many :placeholders, :through => :placeholder_widgets
+	has_many :holdings
+	has_many :placeholders, :through => :holdings
 end

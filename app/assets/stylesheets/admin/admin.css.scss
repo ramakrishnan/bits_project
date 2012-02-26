@@ -13,6 +13,7 @@ body {
 	border-left: 1px solid #000000;
 	border-right: 1px solid #000000;
 	padding: 0px 10px;
+	background-color:#FFFFFF;
 }
 
 $scale_by: 2;
@@ -33,11 +34,21 @@ $scaled_165: (165/$scale_by);
 #page_layout {
 	width:900px;
 	min-height:300px;
-	background-color:#FFFFFF;
+}
+
+#build_layout {
+	width:990px;
+}
+#available_placeholders {
+		float:left;
+		width:#{$scaled_966+10}px;
+}
+#page_layout {
+		float:left;
+		width:#{$scaled_966+10}px;
 }
 
 #page_layout {
-	
 	.width_966 {
 		float:left;
 	}

@@ -6,6 +6,6 @@ layout 'admin'
 	
 	def new
 		@templates = Template.all
-		Wpage = Pagew.new
+		@page = Page.new
 	end
 end

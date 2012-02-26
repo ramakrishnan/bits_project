@@ -1,6 +1,6 @@
-class CreatePlaceholderWidgets < ActiveRecord::Migration
+class CreateHoldings < ActiveRecord::Migration
   def change
-    create_table :placeholder_widgets do |t|
+    create_table :holdings do |t|
       t.integer :widget_id
       t.integer :placeholder_id
       t.integer :position
