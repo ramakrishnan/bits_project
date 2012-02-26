@@ -5,11 +5,11 @@
 	<%= form_tag admin_pages_path do %>
 		<div class="element">
 			<label for"page_name">Name</label>
-			<%= text_field_tag :page, :name %>
+			<%= text_field :page, :name %>
 		</div>
 		<div class="element">
 			<label for"page_slug">Slug</label>
-			<%= text_field_tag :page, :slug %>
+			<%= text_field :page, :slug %>
 		</div>		
 		<div class="form_end">
 			<%= submit_tag "Create"%>

@@ -43,6 +43,7 @@ BitsProject::Application.routes.draw do
      namespace :admin do
        resources :pages
        resource :session
+       resources :templates
      end
 
   # You can have the root of your site routed with "root"
