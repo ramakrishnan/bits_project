@@ -1,0 +1,49 @@
+<h2>Widgets Under <%=@page.name%></h2>
+	<% rows = 0
+		available_width = [] 
+	    @page.placeholders.each do |placeholder|  
+	    rows = rows + 1 if rows != placeholder.row
+		grid = placeholder.grid
+		available_width << grid.width
+	%>
+		<%= content_for "option_#{placeholder.row}" do %>
+			<%= content_tag :option, grid.name, 
+				:value => placeholder.id %>
+		<% end %>
+		
+		<%= content_for "row_#{placeholder.row}" do %>
+		<%= content_tag :div, 
+					:class => "width_#{grid.width}",
+					:style => "background-color:#{grid.color}" do %>
+				<h1> <%= rows %> <br/><%=grid.width%></h1>
+				<% end %>
+		<% end -%>
+	<% end %>
+
+<%= form_tag admin_page_widgets_path(@page) do %>
+<p> <%= flash[:notice]%> </p>	
+<p> <%= flash[:errors]%> </p>	
+<select id="placeholder" name="placeholder">
+	<option value="">Select a placeholder</option>
+    <% rows.times do |row| -%>
+    	<optgroup label="<%="Row  #{row+1}"%>">
+    		<%= yield "option_#{row+1}" %>
+    	</optgroup>
+    <% end -%>	 
+</select>
+
+<%= select_tag("widget", 
+	options_for_select(Widget.where(:width => available_width).collect {|w| [ w.name, w.id ] }),
+	 {:prompt => 'Select widget'}) %>
+
+<%= submit_tag "Add width"%>
+<% end %>
+	
+<div id="place_widget">
+	<% rows.times do |row| -%>
+		<%= content_tag :div,
+			:class => "row" do %>
+			<%= yield "row_#{row+1}" %>
+		<% end %>
+	<% end -%>	
+</div>	
