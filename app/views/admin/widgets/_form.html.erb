@@ -4,9 +4,17 @@
 </div>
 <div class="element">
 	<label for"widget_width">Width</label>
-	<%= text_field :widget, :width %>
+	<% if new_form %>
+<%= select("widget", "width", 
+	options_for_select(Grid.all.collect {|g| [ g.width, g.width ] }),
+	 {:prompt => 'Widget Width'}) %>	
+	 <% else %>
+		<%= text_field :widget, :width %>
+	<% end %>
+</div>
+<div class="element">
+	<label for"widget_filename">File name</label>
+	<%= text_field :widget, :filename %>
 </div>
 
-<div class="form_save">
-	<%= submit_tag "Save"%>
-</div>
+

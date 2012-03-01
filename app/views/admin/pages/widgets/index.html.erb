@@ -15,7 +15,13 @@
 		<%= content_tag :div, 
 					:class => "width_#{grid.width}",
 					:style => "background-color:#{grid.color}" do %>
-				<h1> <%= rows %> <br/><%=grid.width%></h1>
+				<div class="page_widget">
+					<% placeholder.widgets.each do |widget|%>
+						<div class="widget_title">
+							<%= widget.name%>
+						</div>
+					<% end %>
+				</div>
 				<% end %>
 		<% end -%>
 	<% end %>

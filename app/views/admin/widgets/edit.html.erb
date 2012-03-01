@@ -1,4 +1,19 @@
 <h2> Edit widget </h2>
-<%= form_tag admin_grid_path(@widget), :method => :put  do %>
-	<%= render :partial => "form"%>
+<%= form_tag admin_widget_path(@widget), :method => :put  do %>
+	<%= render :partial => "form", :locals => {:new_form => false}%>
+	<div class="element">
+		<% if @widget.widget_type == 2 %>
+			<label for"widget_code">Ad Script</label>
+			<%= text_area :widget, :style %>
+		<% else %>
+			<label for"widget_code">Ad Script</label>
+			<%= text_area :widget, :style %>
+		<% end %>
+		<% if @widget.widget_type == 3 %>
+			<%#= @widget.collections %>
+		<% end %>
+	</div>	
+	<div class="form_save">
+		<%= submit_tag "Save"%>
+	</div>	
 <% end %>

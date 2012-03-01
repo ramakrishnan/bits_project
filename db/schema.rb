@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120219152354) do
+ActiveRecord::Schema.define(:version => 20120301184948) do
 
   create_table "grids", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,12 @@ ActiveRecord::Schema.define(:version => 20120219152354) do
     t.integer  "grid_id"
     t.integer  "row"
     t.integer  "column"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "widget_types", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
