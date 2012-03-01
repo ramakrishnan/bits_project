@@ -1,0 +1,20 @@
+<h2> List all available grids </h2>
+<%= link_to "Add New Widget", new_admin_widget_path %>
+<table width="100%" align="center" cellspacing=10 cellpadding=10>
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>width</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	<% @widgets.each_with_index do |widget, index|%>
+	<tr>
+		<td><%= index +1 %></td>
+		<td><%= widget.name %></td>
+		<td><%= widget.width %></td>
+		<td> <%= link_to "Edit", edit_admin_widget_path(widget)%></td>
+		<td> <%= link_to "Delete", admin_widget_path(widget), :method => :delete, :confirm => "Are you sure?"%></td>
+	</tr>
+	<% end %>
+</table>
