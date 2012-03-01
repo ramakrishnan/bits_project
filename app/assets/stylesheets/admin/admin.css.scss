@@ -7,8 +7,8 @@ body {
 	font-size: 14px;
 }
 .main_container {
-	width:974px;
-	margin: auto;
+	width:990px;
+	margin: 0px auto;
 	min-height:600px;
 	border-left: 1px solid #000000;
 	border-right: 1px solid #000000;
@@ -17,25 +17,35 @@ body {
 }
 
 $scale_by: 2;
-$scaled_966: (966/$scale_by);
-$scaled_300: (300/$scale_by);
-$scaled_485: (485/$scale_by);
-$scaled_165: (165/$scale_by);
-$scaled_620: (620/$scale_by);
-$scaled_658: (658/$scale_by);
+$actual_966: 966;
+$actual_300: 300;
+$actual_485: 485;
+$actual_165: 165;
+$actual_620: 620;
+$actual_658: 658;
+
+$scaled_966: ($actual_966/$scale_by);
+$scaled_300: ($actual_300/$scale_by);
+$scaled_485: ($actual_485/$scale_by);
+$scaled_165: ($actual_165/$scale_by);
+$scaled_620: ($actual_620/$scale_by);
+$scaled_658: ($actual_658/$scale_by);
 
 
-@mixin placeholder_space {
+@mixin placeholder_space($scale_by) {
 	height:20px;
 	margin-top:#{(8/$scale_by)}px;
 	margin-right:#{(8/$scale_by)}px;
 	font-size:14px;
 	padding: 2px 0px 0px 0px;
-	&:hover {
+	@if $scale_by == 1 {
+		min-height:100px;
+	} @else {
+		&:hover {
 		cursor:pointer;
+		}
 	}
 }
-
 
 #build_layout {
 	width:990px;
@@ -46,24 +56,48 @@ $scaled_658: (658/$scale_by);
 }
 
 #page_layout {
+	float:left;
+	width:#{$scaled_966}px;
+	div {
 		float:left;
-		width:#{$scaled_966+10}px;
-}
+	}
+}	
 
-#page_layout {
-	.width_966 {
+#place_widget {
+	width:#{$actual_966+10}px;
+	margin: 0px auto;
+	div {
 		float:left;
+	}
+	.row {
+		width: #{$actual_966 + 8 }px;
+	}
+	.width_966 {
+		@include placeholder_space(1);
+		width: #{$actual_966}px;
 	}
 	.width_300 {
-	float:left;
+		@include placeholder_space(1);
+		width: #{$actual_300}px;
 	}
-	 .width_485{
-	 float:left;
-	 }
-	  .width_165 {
-	  float:left;
+	.width_485 {
+		@include placeholder_space(1);
+		width: #{$actual_485}px;
 	}	
-}	
+	.width_165 {
+		@include placeholder_space(1);
+		width: #{$actual_165}px;
+	}
+	.width_658 {
+		@include placeholder_space(1);
+		width: #{$actual_658}px;
+	}
+	.width_620 {
+		@include placeholder_space(1);
+		width: #{$actual_620}px;
+	}
+}
+
 
 #available_placeholders, #page_layout {
 	.row {
@@ -74,27 +108,27 @@ $scaled_658: (658/$scale_by);
 	}
 
 	.width_966 {
-		@include placeholder_space;
+		@include placeholder_space(2);
 		width: #{$scaled_966}px;
 	}
 	.width_300 {
-		@include placeholder_space;
+		@include placeholder_space(2);
 		width: #{$scaled_300}px;
 	}
 	.width_485 {
-		@include placeholder_space;
+		@include placeholder_space(2);
 		width: #{$scaled_485}px;
 	}	
 	.width_165 {
-		@include placeholder_space;
+		@include placeholder_space(2);
 		width: #{$scaled_165}px;
 	}
 	.width_658 {
-		@include placeholder_space;
+		@include placeholder_space(2);
 		width: #{$scaled_658}px;
 	}
 	.width_620 {
-		@include placeholder_space;
+		@include placeholder_space(2);
 		width: #{$scaled_620}px;
 	}
 }	
