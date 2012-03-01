@@ -7,19 +7,22 @@ layout 'admin'
 			render :action => "new" and return
 		end		
 		@page = Page.new(params[:page])
-		if @page.save
+		Page.transaction do
+		 @page.save
 			rows.each do |row, columns|
-				columns.each_with_index do |template, index|
+				columns.each_with_index do |grid, index|
 					index = index + 1
 					@page.placeholders.create(:row => row, :column => index,
-						:template_id => template)
+						:grid_id => grid)
 				end
 			end
-			redirect_to :action => new_admin_page_path	
-		else
+		  end
+		 if @page.save 
+			redirect_to admin_pages_path
+		 else
 			flash[:message] = "Please check the following fields"
 			render :action => "new"
-		end
+		 end
 	end
 	
 	def index
@@ -27,7 +30,7 @@ layout 'admin'
 	end
 	
 	def new
-		@templates = Template.all
+		@grids = Grid.all
 		@page = Page.new
 	end
 end

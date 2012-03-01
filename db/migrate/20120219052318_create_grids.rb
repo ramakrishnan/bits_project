@@ -1,6 +1,6 @@
-class CreateTemplates < ActiveRecord::Migration
+class CreateGrids < ActiveRecord::Migration
   def change
-    create_table :templates do |t|
+    create_table :grids do |t|
       t.string :name
       t.integer :width
       t.string :color

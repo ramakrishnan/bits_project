@@ -47,7 +47,7 @@ BitsProject::Application.routes.draw do
    	  	  end
    		end
        resource :session
-       resources :templates
+       resources :grids
      end
 
   # You can have the root of your site routed with "root"

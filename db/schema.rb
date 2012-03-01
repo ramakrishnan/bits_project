@@ -12,6 +12,22 @@
 
 ActiveRecord::Schema.define(:version => 20120219152354) do
 
+  create_table "grids", :force => true do |t|
+    t.string   "name"
+    t.integer  "width"
+    t.string   "color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "holdings", :force => true do |t|
+    t.integer  "widget_id"
+    t.integer  "placeholder_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.string   "slug"
@@ -20,27 +36,11 @@ ActiveRecord::Schema.define(:version => 20120219152354) do
     t.datetime "updated_at"
   end
 
-  create_table "placeholder_widgets", :force => true do |t|
-    t.integer  "widget_id"
-    t.integer  "placeholder_id"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "placeholders", :force => true do |t|
     t.integer  "page_id"
-    t.integer  "template_id"
+    t.integer  "grid_id"
     t.integer  "row"
     t.integer  "column"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "templates", :force => true do |t|
-    t.string   "name"
-    t.integer  "width"
-    t.string   "color"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

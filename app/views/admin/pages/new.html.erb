@@ -26,11 +26,12 @@
 
 <div id="build_layout">
 	<div id="available_placeholders">
-		<% @templates.each do |template| %>
-			<%= content_tag :div, template.name, 
-				:class => "width_#{template.width}", 
-				"data-width" => template.width,
-				"data-template_id" => template.id %>
+		<% @grids.each do |grid| %>
+			<%= content_tag :div, grid.name, 
+				:class => "width_#{grid.width}",
+				:style => "background-color:#{grid.color}", 
+				"data-width" => grid.width,
+				"data-template_id" => grid.id %>
 		<% end %>
 	</div>	
 	<div id="page_layout">

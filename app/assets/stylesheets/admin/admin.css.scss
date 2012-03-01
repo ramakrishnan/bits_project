@@ -21,6 +21,8 @@ $scaled_966: (966/$scale_by);
 $scaled_300: (300/$scale_by);
 $scaled_485: (485/$scale_by);
 $scaled_165: (165/$scale_by);
+$scaled_620: (620/$scale_by);
+$scaled_658: (658/$scale_by);
 
 
 @mixin placeholder_space {
@@ -28,6 +30,7 @@ $scaled_165: (165/$scale_by);
 	margin-top:#{(8/$scale_by)}px;
 	margin-right:#{(8/$scale_by)}px;
 	font-size:14px;
+	padding: 2px 0px 0px 0px;
 	&:hover {
 		cursor:pointer;
 	}
@@ -69,25 +72,30 @@ $scaled_165: (165/$scale_by);
 	.selected {
 		border: 1px solid red;
 	}
+
 	.width_966 {
 		@include placeholder_space;
-		background-color:#A8A8A8;
 		width: #{$scaled_966}px;
 	}
 	.width_300 {
 		@include placeholder_space;
-		background-color:#4FAEFE;
 		width: #{$scaled_300}px;
 	}
 	.width_485 {
 		@include placeholder_space;
-		background-color:#7FFF3A;
 		width: #{$scaled_485}px;
 	}	
 	.width_165 {
 		@include placeholder_space;
-		background-color:#7FFF3A;
 		width: #{$scaled_165}px;
+	}
+	.width_658 {
+		@include placeholder_space;
+		width: #{$scaled_658}px;
+	}
+	.width_620 {
+		@include placeholder_space;
+		width: #{$scaled_620}px;
 	}
 }	
 
