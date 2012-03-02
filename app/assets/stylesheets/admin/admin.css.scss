@@ -227,8 +227,9 @@ $scaled_658: ($actual_658/$scale_by);
 		 }		
 		.widgets {
 		  width: #{$width - 20}px;
-		  height:25px;
+		  height:15px;
 		  line-height:1.5;
+		  margin-bottom:5px;
 		  span.position {
 		  	padding:3px;
 		  	border-right:2px dotted #c2c2c2;
