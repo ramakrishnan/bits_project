@@ -1,0 +1,20 @@
+<h2> List all available videos </h2>
+<%= link_to "Add New Video", new_admin_video_path %>
+<table width="100%" align="center" cellspacing=10 cellpadding=10>
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>Thumbnail</th>
+		<th>Description</th>
+		<th>Edit</th>
+	</tr>
+	<% @videos.each_with_index do |video, index|%>
+	<tr>
+		<td><%= index +1 %></td>
+		<td><%= video.name %></td>
+		<td><%= video.thumbnail %></td>
+		<td><%= video.description %></td>
+		<td> <%= link_to "Edit", edit_admin_video_path(video)%></td>
+	</tr>
+	<% end %>
+</table>

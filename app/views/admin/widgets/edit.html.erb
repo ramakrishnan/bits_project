@@ -6,11 +6,11 @@
 			<label for"widget_code">Ad Script</label>
 			<%= text_area :widget, :style %>
 		<% else %>
-			<label for"widget_code">Ad Script</label>
+			<label for"widget_code">Widget Styles</label>
 			<%= text_area :widget, :style %>
 		<% end %>
 		<% if @widget.widget_type == 3 %>
-			<%#= @widget.collections %>
+			<%= render :partial => "collection"%>
 		<% end %>
 	</div>	
 	<div class="form_save">

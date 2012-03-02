@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120301184948) do
+ActiveRecord::Schema.define(:version => 20120302072115) do
+
+  create_table "collections", :force => true do |t|
+    t.string   "type"
+    t.text     "data"
+    t.integer  "widget_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "grids", :force => true do |t|
     t.string   "name"
@@ -45,6 +53,14 @@ ActiveRecord::Schema.define(:version => 20120301184948) do
     t.datetime "updated_at"
   end
 
+  create_table "videos", :force => true do |t|
+    t.string   "name"
+    t.string   "thumbnail"
+    t.string   "embed_src"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "widget_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -56,7 +72,6 @@ ActiveRecord::Schema.define(:version => 20120301184948) do
     t.string   "filename"
     t.integer  "width"
     t.integer  "widget_type"
-    t.text     "data"
     t.text     "style"
     t.datetime "created_at"
     t.datetime "updated_at"

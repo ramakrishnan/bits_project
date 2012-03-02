@@ -5,7 +5,6 @@ class CreateWidgets < ActiveRecord::Migration
       t.string :filename
       t.integer :width
       t.integer :widget_type
-      t.text :data
       t.text :style
 
       t.timestamps

@@ -1,0 +1,14 @@
+<h2> Manage Widget Collections</h2>
+<% @widget.collections.each do |collection| %>	
+	<div class="element">
+		<label for"collection_type">Type</label>
+		<%= text_field :collection, :type %>
+	</div>
+	<%= button_to "List"%>
+	<div class="element">
+		<div id="collection_list">
+		</div>	
+		<div id="add_to_list">
+		</div>		
+	</div>	
+<% end %>	

@@ -25,6 +25,7 @@ layout 'admin'
 	def create
 		@widget = Widget.new(params[:widget])
 		if @widget.save
+			@widget.collections.create if @widget.widget_type == 3
 			redirect_to admin_widgets_path
 		else
 			render :action => :new

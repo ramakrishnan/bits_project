@@ -42,6 +42,7 @@ BitsProject::Application.routes.draw do
   # Sample resource route within a namespace:
      namespace :admin do
        resources :widgets	
+       resources :videos
        resources :pages do
        	  scope :module => "pages" do
        	  resources :widgets

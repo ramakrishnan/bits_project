@@ -1,0 +1,19 @@
+<div class="element">
+	<label for"video_name">Name</label>
+	<%= text_field :video, :name %>
+</div>
+<div class="element">
+	<label for"video_thumbnail">Thumbnail</label>
+	<%= text_field :video, :thumbnail %>
+</div>
+<div class="element">
+	<label for"video_description">Description</label>
+	<%= text_area :video, :description %>
+</div>
+<div class="element">
+	<label for"video_embed_src">Embed SRC</label>
+	<%= text_area :video, :embed_src %>
+</div>
+<div class="form_save">
+	<%= submit_tag "Save"%>
+</div>
