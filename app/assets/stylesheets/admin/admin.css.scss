@@ -37,10 +37,8 @@ background-color:#c2c2c2;
 }
 
 .form_data {
-	padding: 20px 15px 0 15px;
 	width: 557px;
 	min-height: 200px;
-	float: left;
 	margin-bottom: 30px;
 }
 
@@ -68,7 +66,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
 	font-weight: 300;
 }
 
-input[type="text"], input[type="password"], input[type="email"], textarea, select {
+input[type="text"], input[type="password"], input[type="email"], textarea, select  {
 	padding: 10px;
 	height: auto;
 	font-family: 'Helvetica Neue', Arial,Helvetica, Verdana, sans-serif;
@@ -80,6 +78,10 @@ input[type="text"], input[type="password"], input[type="email"], textarea, selec
 	transition: border-color ease-out 0.3s;
 	transition: box-shadow ease-out 0.3s;
 	color: #404040;
+}
+
+.form_default .element select {
+	padding: 5px;
 }
 
 .button.large {
@@ -110,6 +112,46 @@ input[type="text"], input[type="password"], input[type="email"], textarea, selec
 .button.green {
 	@include button_shade('#629630');
 }
+
+#main_container h2 {
+		font-size:30px;
+		line-height:26px;
+		font-weight:300;
+		margin:10px 0 20px;
+		padding:10px 0px 10px 10px;
+		border-bottom:1px solid #eee;
+}
+
+	.table{
+		width:100%;
+		border:solid 1px transparent;
+		margin:0 0 20px 0;
+		tr{
+			border-bottom:solid 1px #eee;
+			&.last_row{
+				border-bottom:0 none;
+			}
+			th{
+				font-weight:bold;
+			}
+			&.odd{
+				background:#FAF0F0;
+			}			
+			th,td{
+				width:auto;
+				text-align:left;
+				padding:10px;
+				&.first{
+					width:11%;
+				}
+				&.right {
+					text-align:right;
+					float:none;
+				}
+			}
+		  }
+		}
+	
 
 ////////
 

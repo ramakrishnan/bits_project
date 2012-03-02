@@ -3,8 +3,9 @@
 	<div class="element">
 		<label for"collection_category">Category</label>
 		<%= select :collection, :category, Collection.types %>
+		<input type="button" id="get_refinement" value="List"/>
 	</div>
-	<input type="button" id="get_refinement" value="List"/>
+	
 	<div class="element refinement">
 		<div id="collection_list" class="collection_list">
 			<div>Available List</div>

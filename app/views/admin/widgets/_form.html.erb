@@ -9,12 +9,10 @@
 	options_for_select(Grid.all.collect {|g| [ g.width, g.width ] }),
 	 {:prompt => 'Widget Width'}) %>	
 	 <% else %>
-		<%= text_field :widget, :width, :rows => 10, :cols => 40 %>
+		<%= text_field :widget, :width, :readonly => true, :disabled => true %>
 	<% end %>
 </div>
 <div class="element">
 	<label for"widget_filename">File name</label>
 	<%= text_field :widget, :filename %>
 </div>
-
-

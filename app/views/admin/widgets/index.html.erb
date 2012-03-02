@@ -1,6 +1,6 @@
 <h2> List all available grids </h2>
 <%= link_to "Add New Widget", new_admin_widget_path %>
-<table width="100%" align="center" cellspacing=10 cellpadding=10>
+<table class="table">
 	<tr>
 		<th>#</th>
 		<th>Name</th>
@@ -9,7 +9,7 @@
 		<th>Delete</th>
 	</tr>
 	<% @widgets.each_with_index do |widget, index|%>
-	<tr>
+	<tr class=<%=cycle("odd","even")%> >
 		<td><%= index +1 %></td>
 		<td><%= widget.name %></td>
 		<td><%= widget.width %></td>

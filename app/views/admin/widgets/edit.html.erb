@@ -1,19 +1,21 @@
 <h2> Edit widget </h2>
-<%= form_tag admin_widget_path(@widget), :method => :put  do %>
+<%= form_tag admin_widget_path(@widget), :method => :put, :class => "form_default"  do %>
+<div class="form_data">	
 	<%= render :partial => "form", :locals => {:new_form => false}%>
 	<div class="element">
 		<% if @widget.widget_type == 2 %>
 			<label for"widget_code">Ad Script</label>
-			<%= text_area :widget, :style %>
+			<%= text_area :widget, :style, :rows => 5, :cols => 40 %>
 		<% else %>
 			<label for"widget_code">Widget Styles</label>
-			<%= text_area :widget, :style %>
+			<%= text_area :widget, :style, :rows => 5, :cols => 40 %>
 		<% end %>
 		<% if @widget.widget_type == 3 %>
 			<%= render :partial => "collection"%>
 		<% end %>
 	</div>	
 	<div class="form_save">
-		<%= submit_tag "Save"%>
-	</div>	
+		<%= submit_tag "Save", :class => "button large green" %>
+	</div>
+</div>	
 <% end %>
