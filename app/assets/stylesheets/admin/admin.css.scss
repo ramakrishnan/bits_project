@@ -222,12 +222,12 @@ $scaled_658: ($actual_658/$scale_by);
 		margin:10px;
 		background-color:#FFFFFF;
 		border-botton:1px solid #000000;
+		.widgets {
 		.widgets_links {
 		    display:none;
 		 }		
-		.widgets {
 		  width: #{$width - 20}px;
-		  height:15px;
+		  height:25px;
 		  line-height:1.5;
 		  margin-bottom:5px;
 		  span.position {
@@ -239,7 +239,8 @@ $scaled_658: ($actual_658/$scale_by);
 		  }			  
 		}	
 	}
-	.page_widget:hover {
+	.page_widget .widgets:hover {
+		height:50px;
 		.widgets_links {
 		    display:block;
 		  }
@@ -253,7 +254,7 @@ $scaled_658: ($actual_658/$scale_by);
 		padding:0px 20px;
 		border:1px solid #000000;
 	}
-	div {
+	.column {
 		float:left;
 	}
 	.row {
