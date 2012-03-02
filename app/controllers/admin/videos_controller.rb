@@ -2,7 +2,7 @@ class Admin::VideosController < ApplicationController
 layout 'admin'
 
 	def index
-		@videos = Video.paginate(:page => params[:page], :per_page => 1)
+		@videos = Video.paginate(:page => params[:page], :per_page => 10)
 	end
 	
 	def new

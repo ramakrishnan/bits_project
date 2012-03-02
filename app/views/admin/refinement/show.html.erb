@@ -1,0 +1,5 @@
+<% @refinements.each do |refinement| %>
+	<div class="list_collection">
+		<%= check_box_tag "collection", refinement.id %> <%=refinement.name%>
+	</div>
+<% end %>	
