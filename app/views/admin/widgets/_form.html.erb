@@ -9,7 +9,7 @@
 	options_for_select(Grid.all.collect {|g| [ g.width, g.width ] }),
 	 {:prompt => 'Widget Width'}) %>	
 	 <% else %>
-		<%= text_field :widget, :width %>
+		<%= text_field :widget, :width, :rows => 10, :cols => 40 %>
 	<% end %>
 </div>
 <div class="element">

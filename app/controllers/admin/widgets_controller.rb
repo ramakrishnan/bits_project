@@ -16,6 +16,9 @@ layout 'admin'
 	def update
 		@widget = Widget.find(params[:id])
 		if @widget.update_attributes(params[:widget])
+			@widget.collections.each do |collection|
+				collection.update_attributes(params[:collection])
+			end
 			redirect_to admin_widgets_path
 		else
 			render :action => :edit

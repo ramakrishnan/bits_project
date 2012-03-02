@@ -1,28 +1,42 @@
 <h2> Manage Widget Collections</h2>
 <% @widget.collections.each do |collection| %>	
 	<div class="element">
-		<label for"collection_type">Type</label>
-		<%= text_field :collection, :type %>
+		<label for"collection_category">Category</label>
+		<%= select :collection, :category, Collection.types %>
 	</div>
 	<input type="button" id="get_refinement" value="List"/>
-	<div class="element">
-		<div id="collection_list">
+	<div class="element refinement">
+		<div id="collection_list" class="collection_list">
+			<div>Available List</div>
 		</div>	
-		<div id="add_to_list">
+		<div id="add_to_list" class="collection_list">
+			<div>Selected List
+				<%= render :partial => "collection_list", 
+					:locals => {:collection => collection} %>
+			</div>
 		</div>		
 	</div>	
 <% end %>
 
 <%= content_for :internal_javascript do %>
+	$("#collection_list div").live("click",function(e) {
+			var target = $(e.target);
+			$('<input>').attr({
+			    type: 'checkbox',
+			    name: 'collection[data][]',
+			    value: target.data('id')
+			    }).prependTo(target);
+			$("#add_to_list").append(target);	    
+	});
+	
 	$("#get_refinement").click( function(e) {
 		$.ajax({
 				type: "GET",
 				url: "<%=admin_refinement_path%>",
-				data: {type:  $("#collection_type").val() },
+				data: {type:  $("#collection_category").val() },
 				success: function(resp) {
 					$("#collection_list").append(resp);	
 				}
 			});
 		});
 <% end %>	
-	

@@ -1,0 +1,7 @@
+<% result = collection.category.constantize.find(collection.data) 
+   result.each do |data|    	
+%>
+<div class="list_collection">
+	<%= check_box_tag "collection[data][]", data.id, true %> <%= data.name %>
+</div>
+<% end %>

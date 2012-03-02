@@ -1,7 +1,7 @@
 class CreateCollections < ActiveRecord::Migration
   def change
     create_table :collections do |t|
-      t.string :type
+      t.string :category
       t.text :data
       t.integer :widget_id
 
