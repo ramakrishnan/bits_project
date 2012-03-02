@@ -49,6 +49,7 @@ BitsProject::Application.routes.draw do
    	  	  end
    		end
        resource :session
+       resource :refinement 
        resources :grids
      end
 

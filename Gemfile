@@ -7,6 +7,7 @@ gem 'rails', '3.1.0'
 
 gem 'mysql'
 gem 'json'
+gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.
