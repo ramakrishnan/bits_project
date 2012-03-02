@@ -16,9 +16,15 @@
 					:class => "width_#{grid.width}",
 					:style => "background-color:#{grid.color}" do %>
 				<div class="page_widget">
-					<% placeholder.widgets.each do |widget|%>
-						<div class="widget_title">
-							<%= widget.name%>
+					<span class="grid_name"><%=grid.name%></span>
+					<% placeholder.widgets.each_with_index do |widget, index|%>
+						<div class="widgets">
+							<span class="position"><%= index + 1%></span>
+							<span class="widget_title"><%= widget.name%></span>
+						</div>	
+						<div class="widgets_links">
+							<span class="links"><%= widget.name%></span>
+							<span class="links"><%= widget.name%></span>
 						</div>
 					<% end %>
 				</div>

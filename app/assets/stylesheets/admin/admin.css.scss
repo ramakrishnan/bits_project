@@ -184,15 +184,15 @@ $scaled_658: ($actual_658/$scale_by);
 
 
 @mixin placeholder_space($scale_by) {
-	height:20px;
 	margin-top:#{(8/$scale_by)}px;
 	margin-right:#{(8/$scale_by)}px;
 	font-size:14px;
 	padding: 2px 0px 0px 0px;
 	text-indent:10px;
 	@if $scale_by == 1 {
-		// min-height:100px;
+		min-height:50px;
 	} @else {
+		height:20px;
 		&:hover {
 		cursor:pointer;
 		}
@@ -215,9 +215,43 @@ $scaled_658: ($actual_658/$scale_by);
 	}
 }	
 
+
+@mixin widget_listing($width) {
+	.page_widget {
+		width: #{$width - 20}px;
+		margin:10px;
+		background-color:#FFFFFF;
+		border-botton:1px solid #000000;
+		.widgets_links {
+		    display:none;
+		 }		
+		.widgets {
+		  width: #{$width - 20}px;
+		  height:25px;
+		  line-height:1.5;
+		  span.position {
+		  	padding:3px;
+		  	border-right:2px dotted #c2c2c2;
+		  }		
+		  span.widget_title {
+		  	padding:3px;
+		  }			  
+		}	
+	}
+	.page_widget:hover {
+		.widgets_links {
+		    display:block;
+		  }
+	}
+}
 #place_widget {
 	width:#{$actual_966+10}px;
 	margin: 0px auto;
+	.grid_name {
+		width:50px;
+		padding:0px 20px;
+		border:1px solid #000000;
+	}
 	div {
 		float:left;
 	}
@@ -227,26 +261,32 @@ $scaled_658: ($actual_658/$scale_by);
 	.width_966 {
 		@include placeholder_space(1);
 		width: #{$actual_966}px;
+		@include widget_listing($actual_966);
 	}
 	.width_300 {
 		@include placeholder_space(1);
 		width: #{$actual_300}px;
+		@include widget_listing($actual_300);
 	}
 	.width_485 {
 		@include placeholder_space(1);
 		width: #{$actual_485}px;
+		@include widget_listing($actual_485);
 	}	
 	.width_165 {
 		@include placeholder_space(1);
 		width: #{$actual_165}px;
+		@include widget_listing($actual_165);
 	}
 	.width_658 {
 		@include placeholder_space(1);
 		width: #{$actual_658}px;
+		@include widget_listing($actual_658);
 	}
 	.width_620 {
 		@include placeholder_space(1);
 		width: #{$actual_620}px;
+		@include widget_listing($actual_620);
 	}
 }
 
