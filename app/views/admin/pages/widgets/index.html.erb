@@ -15,7 +15,7 @@
 		<%= content_tag :div, 
 					:class => "width_#{grid.width} column",
 					:style => "background-color:#{grid.color}" do %>
-					<%= render :partial => "_list", 
+					<%= render :partial => "list", 
 						:locals => {:placeholder => placeholder, :grid => grid}  %>						
 				<% end %>
 		<% end -%>
