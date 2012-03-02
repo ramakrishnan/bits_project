@@ -6,17 +6,17 @@
 		<input type="button" id="get_refinement" value="List"/>
 	</div>
 	
-	<div class="element refinement">
-		<div id="collection_list" class="collection_list">
-			<div>Available List</div>
-		</div>	
-		<div id="add_to_list" class="collection_list">
-			<div>Selected List
-				<%= render :partial => "collection_list", 
-					:locals => {:collection => collection} %>
-			</div>
-		</div>		
-	</div>	
+	<div id="refinement">
+			<div id="collection_list" class="collection_list">
+				<div>Available List</div>
+			</div>	
+			<div id="add_to_list" class="collection_list">
+				<div>Selected List
+					<%= render :partial => "collection_list", 
+						:locals => {:collection => collection} %>
+				</div>
+			</div>		
+	</div>
 <% end %>
 
 <%= content_for :internal_javascript do %>

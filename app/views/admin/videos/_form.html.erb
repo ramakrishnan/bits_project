@@ -1,3 +1,4 @@
+<div class="form_data">
 <div class="element">
 	<label for"video_name">Name</label>
 	<%= text_field :video, :name %>
@@ -8,12 +9,13 @@
 </div>
 <div class="element">
 	<label for"video_description">Description</label>
-	<%= text_area :video, :description %>
+	<%= text_area :video, :description, :rows => 5, :cols => 40 %>
 </div>
 <div class="element">
 	<label for"video_embed_src">Embed SRC</label>
-	<%= text_area :video, :embed_src %>
+	<%= text_area :video, :embed_src, :rows => 5, :cols => 40 %>
 </div>
 <div class="form_save">
-	<%= submit_tag "Save"%>
+	<%= submit_tag "Save", :class => "button large green"%>
+</div>
 </div>

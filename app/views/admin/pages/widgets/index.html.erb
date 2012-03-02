@@ -26,9 +26,11 @@
 		<% end -%>
 	<% end %>
 
-<%= form_tag admin_page_widgets_path(@page) do %>
+<%= form_tag admin_page_widgets_path(@page), :class => "form_default" do %>
 <p> <%= flash[:notice]%> </p>	
-<p> <%= flash[:errors]%> </p>	
+<p> <%= flash[:errors]%> </p>
+<div class="form_data">	
+<div class="element">	
 <select id="placeholder" name="placeholder">
 	<option value="">Select a placeholder</option>
     <% rows.times do |row| -%>
@@ -37,12 +39,12 @@
     	</optgroup>
     <% end -%>	 
 </select>
-
 <%= select_tag("widget", 
 	options_for_select(Widget.where(:width => available_width).collect {|w| [ w.name, w.id ] }),
 	 {:prompt => 'Select widget'}) %>
-
 <%= submit_tag "Add width"%>
+</div>
+</div>
 <% end %>
 	
 <div id="place_widget">

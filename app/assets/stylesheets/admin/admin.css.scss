@@ -37,8 +37,7 @@ background-color:#c2c2c2;
 }
 
 .form_data {
-	width: 557px;
-	min-height: 200px;
+	width: 957px;
 	margin-bottom: 30px;
 }
 
@@ -50,7 +49,7 @@ background-color:#c2c2c2;
 
 .form_default .element label {
 	display: inline-block;
-	width: 22%;
+	width: 11%;
 	margin-right: 2.5%;
 	text-align: right;
 	line-height: 16px;
@@ -82,6 +81,9 @@ input[type="text"], input[type="password"], input[type="email"], textarea, selec
 
 .form_default .element select {
 	padding: 5px;
+}
+.form_default .form_save {
+	clear: both;
 }
 
 .button.large {
@@ -287,11 +289,14 @@ td span.small_box {
 	padding: 10px 50px 0px 0px;
 }
 
-div.refinement .collection_list {
+#refinement {
+	width:100%;
+	min-height:100px;
+	.collection_list {
+	min-height:100px;
 	float:left;
 	width:300px;
 	border:1px solid #000000;
-	min-height:100px;
 	height:auto;
 	margin-left:20px;
 	div {
@@ -303,5 +308,6 @@ div.refinement .collection_list {
 	.selected {
 	 background-color: #c2c2c2;
 	}
+  }
 }
 
