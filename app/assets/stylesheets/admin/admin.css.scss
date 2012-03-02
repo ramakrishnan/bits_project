@@ -191,7 +191,7 @@ $scaled_658: ($actual_658/$scale_by);
 	padding: 2px 0px 0px 0px;
 	text-indent:10px;
 	@if $scale_by == 1 {
-		min-height:100px;
+		// min-height:100px;
 	} @else {
 		&:hover {
 		cursor:pointer;
