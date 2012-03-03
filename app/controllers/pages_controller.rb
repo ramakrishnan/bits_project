@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
+
 	def show
-		render :text => params[:slug]
+		@page = Page.build_by_slug(params[:slug])
 	end
 end

@@ -2,8 +2,7 @@ class Admin::Pages::WidgetsController < ApplicationController
 	layout "admin"
 	
 	def index
-		@page = Page.includes(:placeholders => [:grid, :holdings,
-					 :widgets]).find(params[:page_id])	 
+		@page = Page.build_by_id(params[:page_id])
 	end
 	
 	def create

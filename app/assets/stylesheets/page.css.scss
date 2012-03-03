@@ -1,0 +1,102 @@
+html, body {
+height: 100%;
+color: #404040;
+font-family: 'Helvetica Neue', Arial,Helvetica, Verdana, sans-serif;
+font-size: 14px;
+}
+
+
+$actual_966: 966;
+$actual_300: 300;
+$actual_485: 485;
+$actual_165: 165;
+$actual_620: 620;
+$actual_658: 658;
+
+
+@mixin placeholder_space {
+	margin-top:8px;
+	margin-right:8px;
+	font-size:14px;
+	padding: 2px 0px 0px 0px;
+	min-height:50px;
+	}
+
+@mixin widget_listing($width) {
+	.page_widget {
+		width: #{$width - 20}px;
+		margin:10px;
+		background-color:#FFFFFF;
+		.widgets {
+			width: #{$width - 40}px;
+			margin:10px;
+			background-color:#F0F0F0;
+			height:25px;
+			line-height:1.5;
+			margin-bottom:15px;
+			.widgets_links {
+			    display:none;
+			 }		
+			  span.position {
+			  	padding:3px;
+			  	border-right:2px dotted #c2c2c2;
+			  }		
+			  span.widget_title {
+			  	padding:3px;
+			  }			  
+		}	
+	}
+	.page_widget .widgets:hover {
+		height:50px;
+		.widgets_links {
+		    display:block;
+		  }
+		}
+	}
+
+
+#place_widget {
+	width:#{$actual_966+10}px;
+	margin: 0px auto;
+	.grid_name {
+		width:50px;
+		padding:0px 20px;
+		border:1px solid #000000;
+	}
+	.column {
+		float:left;
+	}
+	.row {
+		width: #{$actual_966 + 8 }px;
+	}
+	.width_966 {
+		@include placeholder_space;
+		width: #{$actual_966}px;
+		@include widget_listing($actual_966);
+	}
+	.width_300 {
+		@include placeholder_space;
+		width: #{$actual_300}px;
+		@include widget_listing($actual_300);
+	}
+	.width_485 {
+		@include placeholder_space;
+		width: #{$actual_485}px;
+		@include widget_listing($actual_485);
+	}	
+	.width_165 {
+		@include placeholder_space;
+		width: #{$actual_165}px;
+		@include widget_listing($actual_165);
+	}
+	.width_658 {
+		@include placeholder_space;
+		width: #{$actual_658}px;
+		@include widget_listing($actual_658);
+	}
+	.width_620 {
+		@include placeholder_space;
+		width: #{$actual_620}px;
+		@include widget_listing($actual_620);
+	}
+}

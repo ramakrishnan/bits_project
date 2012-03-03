@@ -39,7 +39,6 @@ BitsProject::Application.routes.draw do
   #     end
   #   end
 
-	#resources :pages
 	
   # Sample resource route within a namespace:
      namespace :admin do
@@ -54,7 +53,7 @@ BitsProject::Application.routes.draw do
        resource :refinement, :controller => "refinement" 
        resources :grids
      end
-     
+
   match '*slug' => 'pages#show', :format => false
   
   # You can have the root of your site routed with "root"
