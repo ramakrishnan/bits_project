@@ -1,0 +1,23 @@
+#top_notice {
+	font-size: 12px;
+	height: auto;
+	line-height: 0px;
+	padding: 7px 0;
+ .container {
+	width: 960px;
+	margin: 0 auto;
+}
+ &.welcome {
+	color: #EFEDED;
+	text-shadow: #333 0 1px;
+	background-color: #667385;
+ }
+ p {
+ 	padding: 0;
+ }
+ strong {
+	 font-weight: bold;
+	 color: white;
+	 padding-left:30px;
+ }
+}
