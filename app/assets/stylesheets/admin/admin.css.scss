@@ -221,22 +221,23 @@ $scaled_658: ($actual_658/$scale_by);
 		width: #{$width - 20}px;
 		margin:10px;
 		background-color:#FFFFFF;
-		border-botton:1px solid #000000;
 		.widgets {
-		.widgets_links {
-		    display:none;
-		 }		
-		  width: #{$width - 20}px;
-		  height:25px;
-		  line-height:1.5;
-		  margin-bottom:5px;
-		  span.position {
-		  	padding:3px;
-		  	border-right:2px dotted #c2c2c2;
-		  }		
-		  span.widget_title {
-		  	padding:3px;
-		  }			  
+			width: #{$width - 40}px;
+			margin:10px;
+			background-color:#F0F0F0;
+			height:25px;
+			line-height:1.5;
+			margin-bottom:15px;
+			.widgets_links {
+			    display:none;
+			 }		
+			  span.position {
+			  	padding:3px;
+			  	border-right:2px dotted #c2c2c2;
+			  }		
+			  span.widget_title {
+			  	padding:3px;
+			  }			  
 		}	
 	}
 	.page_widget .widgets:hover {

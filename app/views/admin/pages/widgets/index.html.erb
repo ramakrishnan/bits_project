@@ -34,6 +34,7 @@
     	</optgroup>
     <% end -%>	 
 </select>
+
 <%= select_tag("widget", 
 	options_for_select(Widget.where(:width => available_width).collect {|w| [ w.name, w.id ] }),
 	 {:prompt => 'Select widget'}) %>

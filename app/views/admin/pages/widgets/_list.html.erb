@@ -1,17 +1,18 @@
 	<div class="page_widget">
 					<span class="grid_name"><%=grid.name%></span>
-					<% total_widgets = placeholder.widgets.count
-					placeholder.widgets.each_with_index do |widget, index|%>
+					<% widgets = placeholder.widgets
+						widgets.each_with_index do |widget, index|%>
 						<div class="widgets">
 							<span class="position"><%= index + 1%></span>
 							<span class="widget_title"><%= widget.name%></span>
 						<div class="widgets_links">
 <span class="links"><%= link_to "Edit", edit_admin_widget_path(widget)%></span>
 							<span class="links"><%= link_to "Remove",
-		edit_admin_page_widget_path(@page,{:id => widget.id, :placeholder_id => placeholder.id})%></span>
+		admin_page_widget_path(@page,{:id => widget.id, :placeholder_id => placeholder.id}),
+			:method => :delete, :confirm => "Are you sure?" %></span>
 							<span class="links"><%= link_to_if (index != 0), "Up", admin_page_widget_path(@page,{:id => widget.id, :placeholder_id => placeholder.id, :direction => "up" }),
 		:method => :put %></span>
-						<span class="links"><%= link_to_if ( index.next <  total_widgets), "Down",
+						<span class="links"><%= link_to_if ( index.next <  widgets.length ), "Down",
 		admin_page_widget_path(@page,{:id => widget.id, :placeholder_id => placeholder.id, :direction => "down" }),
 		:method => :put %></span>									
 						</div>
