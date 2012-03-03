@@ -9,7 +9,8 @@
 	 {:prompt => 'Widget Type'}) %>
 </div>
 <div class="form_save">
-	 <%= submit_tag "Save"%>
+	 <%= submit_tag "Save", :class => "button large green"%>
+	 <%= link_to "Cancel", admin_widgets_path, :class => "button link  blue"%>
 </div>
 </div>
 <% end %>

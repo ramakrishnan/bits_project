@@ -115,6 +115,20 @@ input[type="text"], input[type="password"], input[type="email"], textarea, selec
 	@include button_shade('#629630');
 }
 
+.button.blue {
+	@include button_shade('#EFEFEF');
+}
+
+.button.link {
+	color: #3987CC;
+	font-weight: normal;
+	text-decoration: none;
+	border-radius: 4px;
+	font-size: 14px;
+	line-height: 18px;
+	padding: 3px 15px 4px;
+}
+
 #main_container h2 {
 		font-size:30px;
 		line-height:26px;

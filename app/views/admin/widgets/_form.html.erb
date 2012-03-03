@@ -12,7 +12,10 @@
 		<%= text_field :widget, :width, :readonly => true, :disabled => true %>
 	<% end %>
 </div>
+
+<% if @widget.widget_type != WidgetType::TYPES["Advertisement"] %>
 <div class="element">
 	<label for"widget_filename">File name</label>
 	<%= text_field :widget, :filename %>
 </div>
+<% end %>

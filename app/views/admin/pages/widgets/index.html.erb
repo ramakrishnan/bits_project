@@ -38,7 +38,7 @@
 <%= select_tag("widget", 
 	options_for_select(Widget.where(:width => available_width).collect {|w| [ w.name, w.id ] }),
 	 {:prompt => 'Select widget'}) %>
-<%= submit_tag "Add width"%>
+<%= submit_tag "Add Widget", :class => "button large green"%>
 </div>
 </div>
 <% end %>
