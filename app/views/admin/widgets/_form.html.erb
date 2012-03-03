@@ -13,7 +13,7 @@
 	<% end %>
 </div>
 
-<% if @widget.widget_type != WidgetType::TYPES["Advertisement"] %>
+<% unless @widget.is_advertisement? %>
 <div class="element">
 	<label for"widget_filename">File name</label>
 	<%= text_field :widget, :filename %>
