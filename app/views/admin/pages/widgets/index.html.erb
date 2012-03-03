@@ -8,7 +8,8 @@
 	%>
 		<%= content_for "option_#{placeholder.row}" do %>
 			<%= content_tag :option, grid.name, 
-				:value => placeholder.id %>
+				:value => placeholder.id,
+				"data-width" => grid.width %>
 		<% end %>
 		
 		<%= content_for "row_#{placeholder.row}" do %>
@@ -35,9 +36,13 @@
     <% end -%>	 
 </select>
 
-<%= select_tag("widget", 
-	options_for_select(Widget.where(:width => available_width).collect {|w| [ w.name, w.id ] }),
-	 {:prompt => 'Select widget'}) %>
+<select id="widget" name="widget">
+	<option value="">Select widget</option>
+	<% option_tags_for_widgets(available_width).each do |option| %>
+		<%= option %>
+	<% end %>
+</select>	
+	 
 <%= submit_tag "Add Widget", :class => "button large green"%>
 </div>
 </div>
@@ -50,4 +55,9 @@
 			<%= yield "row_#{row+1}" %>
 		<% end %>
 	<% end -%>	
-</div>	
+</div>
+
+<%= content_for :internal_javascript do %>
+	Admin.page.initPlaceWidget();
+<% end %>	
+	

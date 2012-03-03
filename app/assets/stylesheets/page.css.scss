@@ -12,22 +12,11 @@ $actual_165: 165;
 $actual_620: 620;
 $actual_658: 658;
 
-
-@mixin placeholder_space {
-	/*
-	margin-top:8px;
-	margin-right:8px;
-	font-size:14px;
-	padding: 2px 0px 0px 0px;
-	*/
-	}
-
 @mixin widget_listing($width) {
 	.widget_content {
 		margin-top:8px;
+	 }
 	}
-	}
-
 
 #place_widget {
 	width:#{$actual_966+10}px;
@@ -38,32 +27,26 @@ $actual_658: 658;
 		float:left;
 	}
 	.width_966 {
-		@include placeholder_space;
 		width: #{$actual_966}px;
 		@include widget_listing($actual_966);
 	}
 	.width_300 {
-		@include placeholder_space;
 		width: #{$actual_300}px;
 		@include widget_listing($actual_300);
 	}
 	.width_485 {
-		@include placeholder_space;
 		width: #{$actual_485}px;
 		@include widget_listing($actual_485);
 	}	
 	.width_165 {
-		@include placeholder_space;
 		width: #{$actual_165}px;
 		@include widget_listing($actual_165);
 	}
 	.width_658 {
-		@include placeholder_space;
 		width: #{$actual_658}px;
 		@include widget_listing($actual_658);
 	}
 	.width_620 {
-		@include placeholder_space;
 		width: #{$actual_620}px;
 		@include widget_listing($actual_620);
 	}

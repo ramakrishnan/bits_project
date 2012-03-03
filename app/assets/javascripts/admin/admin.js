@@ -8,6 +8,20 @@ var Admin = function () {
 		$("#save_page").click(collectPlaceholders);
 	};
 	
+	var initPlaceWidget = function () {
+		hideWidgetsOptions("");
+		$("#placeholder").change(function(event) {
+			var reqWidth = $("#placeholder option:selected").data("width")
+			hideWidgetsOptions(reqWidth);
+		});	
+	};
+	
+	var hideWidgetsOptions = function(width) {
+			$("#widget option").hide();
+			$("#widget option[data-width="+width+"]").show();
+			$("#widget").val("");		
+	};
+	
 	var collectPlaceholders = function () {
 		if (activeRowWidth() < 966) {
 			alert("You have an incomplete row");
@@ -66,7 +80,8 @@ var Admin = function () {
 	};
 	
 	return {
-		initilize: initilize
+		initilize: initilize,
+		initPlaceWidget: initPlaceWidget
 		}	
 	}();
 
