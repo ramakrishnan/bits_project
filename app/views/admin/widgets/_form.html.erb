@@ -16,6 +16,7 @@
 <% unless @widget.is_advertisement? %>
 <div class="element">
 	<label for"widget_filename">File name</label>
-	<%= text_field :widget, :filename %>
+	<%= select :widget, :filename, Widget::FILETYPES, 
+			:prompt => "Select filename" %>
 </div>
 <% end %>

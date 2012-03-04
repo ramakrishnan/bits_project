@@ -4,7 +4,6 @@
 	<tr>
 		<th>#</th>
 		<th>Name</th>
-		<th>File name</th>
 		<th>width</th>
 		<th>Edit</th>
 		<th>Delete</th>
@@ -13,7 +12,6 @@
 	<tr class=<%=cycle("odd","even")%> >
 		<td><%= index +1 %></td>
 		<td><%= widget.name %></td>
-		<td><%= widget.filename %></td>
 		<td><%= widget.width %></td>
 		<td> <%= link_to "Edit", edit_admin_widget_path(widget)%></td>
 		<td> <%= link_to "Delete", admin_widget_path(widget), :method => :delete, :confirm => "Are you sure?"%></td>
