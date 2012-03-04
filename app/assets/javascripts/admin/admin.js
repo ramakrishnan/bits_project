@@ -6,6 +6,11 @@ var Admin = function () {
 		$("#available_placeholders div").click(selectPlaceholder);
 		$("#add_placeholder").click(addPlaceholder);
 		$("#save_page").click(collectPlaceholders);
+		$("#clear_placeholder").click(function (){
+			if (confirm("Do you want to clear?")) {
+				$("#page_layout").empty();
+			}
+		});
 	};
 	
 	var initPlaceWidget = function () {
@@ -52,7 +57,10 @@ var Admin = function () {
 	var addPlaceholder = function() {
 		var layoutContiner = $("#page_layout");	
 		var selected = $("#available_placeholders").find(".selected:first");
-		
+		if (selected.length == 0) {
+			alert("Select a grid");
+			return;
+		}
 		if (activeRow().length == 0 || ((966 - activeRowWidth()) == 0 ) )  {
 			layoutContiner.append("<div class='row'></div>");
 			activeRow().append(selected.clone().removeClass("selected"));
@@ -63,6 +71,7 @@ var Admin = function () {
 		else {
 			alert("Select proper");
 		}
+		selected.removeClass("selected");
 	};
 
 	

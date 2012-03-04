@@ -265,8 +265,8 @@ $scaled_658: ($actual_658/$scale_by);
 	margin: 0px auto;
 	.grid_name {
 		width:50px;
-		padding:0px 20px;
-		border:1px solid #000000;
+		margin-top:5px;
+		margin-left:5px;
 	}
 	.row {
 		width: #{$actual_966 + 8 }px;
