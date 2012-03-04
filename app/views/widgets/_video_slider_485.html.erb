@@ -1,0 +1,19 @@
+<div class="video_slider_485">
+	<div class="widget_title">
+		<h2 class="left"><%=widget.name%></h2>
+			<div class="arrow right">
+				<span id="ram" class="slide_left">&lt;</span>
+				<span class="slide_right">&gt;</span>
+			</div>	
+	</div>	
+	<div class="container">
+		<% 10.times do |count|%>
+		<div class="item"><span> Text <%=count%></span></div>
+		<% end %>
+	</div>	
+</div>
+
+<%= content_for :internal_javascript do %>
+	$("#widget_<%=placeholder.id%>_<%=widget.id%> div.widget_title .arrow span").click(Page.initFourSlider);
+<% end %>	
+	

@@ -3,7 +3,8 @@
 <head>
   <title>BitsProject</title>
   <%= stylesheet_link_tag  "page" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application",
+  							 "page"  %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,5 +13,10 @@
 <style type="text/css">
 	<%= yield :internal_css %>
 </style>
+<%= javascript_tag do -%>
+	$(document).ready( function () {
+		<%= yield :internal_javascript -%>
+	});
+<% end %>
 </body>
 </html>

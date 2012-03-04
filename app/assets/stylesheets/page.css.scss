@@ -29,27 +29,27 @@ $actual_658: 658;
 		float:left;
 	}
 	.width_966 {
-		width: #{$actual_966}px;
+		width: #{$actual_966 + 8}px;
 		@include widget_listing($actual_966);
 	}
 	.width_300 {
-		width: #{$actual_300}px;
+		width: #{$actual_300 + 8}px;
 		@include widget_listing($actual_300);
 	}
 	.width_485 {
-		width: #{$actual_485}px;
+		width: #{$actual_485 + 8}px;
 		@include widget_listing($actual_485);
 	}	
 	.width_165 {
-		width: #{$actual_165}px;
+		width: #{$actual_165 + 8}px;
 		@include widget_listing($actual_165);
 	}
 	.width_658 {
-		width: #{$actual_658}px;
+		width: #{$actual_658 + 8}px;
 		@include widget_listing($actual_658);
 	}
 	.width_620 {
-		width: #{$actual_620}px;
+		width: #{$actual_620 + 8}px;
 		@include widget_listing($actual_620);
 	}
 	}
@@ -58,7 +58,8 @@ $actual_658: 658;
 // Site CSS
 
 @import "partial/header",
-		"partial/footer"
+		"partial/footer",
+		"partial/slider_485"
 
 
 
