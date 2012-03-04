@@ -1,28 +1,11 @@
 <h2> Create a New Page </h2>
 <p> Form a layout by adding different placeholders. </p>
 
-<div class="admin_form">	
 	<%= form_tag admin_pages_path, :class => "form_default" do %>
-	<div class="form_data">
-		<div class="element">
-			<label for"page_name">Name</label>
-			<%= text_field :page, :name %>
-		</div>
-		<div class="element">
-			<label for"page_slug">Slug</label>
-			<%= text_field :page, :slug %>
-		</div>
+		<%= render :partial => "form" %>
 		<div id="placeholders"style="display:none;">
-			<input type="hidden" value="1">
-			<input type="hidden" value="2">
-			<input type="hidden" value="3">
-		</div>
-		<div class="form_end">
-			<%= submit_tag "Create", :id => "save_page", :class => "button large green"%>
-		</div>	
-	</div>
+		</div>		
 	<% end %>
-</div>
 <br/>
 <input type="button" id="add_placeholder" value="Add Placeholder"/>
 <input type="button" id="clear_placeholder" value="Clear Placeholder"/>

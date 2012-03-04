@@ -5,6 +5,7 @@
 		<th>#</th>
 		<th>Name</th>
 		<th>Slug</th>
+		<th>Edit</th>
 		<th>Manage widgets</th>
 	</tr>
 	<% @pages.each_with_index do |page, index|%>
@@ -12,7 +13,8 @@
 		<td><%= index +1 %></td>
 		<td><%= page.name %></td>
 		<td><%= page.slug %></td>
-	<td> <%= link_to "(+) Widgets", admin_page_widgets_path(page) %> </td>
+		<td> <%= link_to "Edit", edit_admin_page_path(page) %> </td>
+		<td> <%= link_to "(+) Widgets", admin_page_widgets_path(page) %> </td>
 	</tr>
 	<% end %>
 </table>

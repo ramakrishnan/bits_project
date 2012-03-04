@@ -1,0 +1,17 @@
+	<div class="form_data">
+		<div class="element">
+			<label for"page_name">Name</label>
+			<%= text_field :page, :name %>
+		</div>
+		<div class="element">
+			<label for"page_slug">Slug</label>
+			<%= text_field :page, :slug %>
+		</div>
+		<div class="element">
+			<label for"page_slug">Style</label>
+			<%= text_area :page, :style, :cols => 40, :rows => 5 %>
+		</div>		
+		<div class="form_end">
+			<%= submit_tag "Save", :id => "save_page", :class => "button large green"%>
+		</div>	
+	</div>
