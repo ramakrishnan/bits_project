@@ -21,28 +21,22 @@ class Holding < ActiveRecord::Base
 	end
 	
 	def move_up
-		previous_holding = self.class.where("position < #{self.position}").first
+		previous_holding = self.class.where("placeholder_id = #{self.placeholder_id} and  position < #{self.position}").first
 		if previous_holding
-		current_position = self.position
-		previous_position = previous_holding.position
-		self.update_attributes(:position => previous_position)
-		previous_holding.update_attributes(:position => current_position)
+			current_position = self.position
+			previous_position = previous_holding.position
+			self.update_attributes(:position => previous_position)
+			previous_holding.update_attributes(:position => current_position)
 	    end
 	end
 	
 	def move_down
-		next_holding = self.class.where("position > #{self.position}").first
+		next_holding = self.class.where("placeholder_id = #{self.placeholder_id} and position > #{self.position}").first
 		if next_holding
-		current_position = self.position
-		next_position = next_holding.position
-		
-		puts self.position
-		puts next_holding.position
-		self.update_attributes(:position => next_position)
-		next_holding.update_attributes(:position => current_position)
-		puts "==============="
-		puts self.position
-		puts next_holding.position		
+			current_position = self.position
+			next_position = next_holding.position
+			self.update_attributes(:position => next_position)
+			next_holding.update_attributes(:position => current_position)
 	    end
 	end
 end
