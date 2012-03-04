@@ -8,10 +8,10 @@
 	
 	<div id="refinement">
 			<div id="collection_list" class="collection_list">
-				<div>Available List</div>
+				<span>Available List</span>
 			</div>	
 			<div id="add_to_list" class="collection_list">
-				<div>Selected List
+				<span>Selected List</span>
 					<%= render :partial => "collection_list", 
 						:locals => {:collection => collection} %>
 				</div>
@@ -29,7 +29,6 @@
 			    }).prependTo(target);
 			$("#add_to_list").append(target);	    
 	});
-	
 	$("#get_refinement").click( function(e) {
 		$.ajax({
 				type: "GET",
@@ -40,4 +39,10 @@
 				}
 			});
 		});
+	$('#load_more_refinement').live('ajax:success', function(event, data){
+		$(event.target).remove();
+		$("#collection_list").append(data);
+	});	
+	
+			
 <% end %>	

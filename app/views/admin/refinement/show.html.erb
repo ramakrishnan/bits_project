@@ -1,3 +1,10 @@
 <% @refinements.each do |refinement| %>
 	<div data-id="<%=refinement.id%>" class="list_collection"><%=refinement.name%></div>
 <% end %>	
+	<% unless @refinements.next_page.blank? %>
+	<% query = CGI.parse(request.query_string) 
+	   query.merge!("page" => @refinements.next_page) 
+	   query.merge!("type" => query["type"].first) 
+	-%>
+	<%= link_to "More", admin_refinement_path(query), :remote => "true", :id => "load_more_refinement"%>
+	<% end %>
