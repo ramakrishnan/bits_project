@@ -1,0 +1,32 @@
+	<% rows = 0
+		available_width = [] 
+	    @page.placeholders.each do |placeholder|  
+	    rows = rows + 1 if rows != placeholder.row
+		grid = placeholder.grid
+	%>
+		<%= content_for "option_#{placeholder.row}" do %>
+			<%= content_tag :option, grid.name, 
+				:value => placeholder.id %>
+		<% end %>
+		
+		<%= content_for "row_#{placeholder.row}" do %>
+		<%= content_tag :div, 
+					:id => "placeholder_#{placeholder.id}",
+					:class => "width_#{grid.width} column" do %>
+					<%= render :partial => "list", 
+						:locals => {:placeholder => placeholder, :grid => grid}  %>						
+				<% end %>
+		<% end -%>
+	<% end %>
+
+	
+<div id="place_widget">
+	<% rows.times do |row| -%>
+		<%= content_tag :div,
+			:class => "row" do %>
+			<%= yield "row_#{row+1}" %>
+		<% end %>
+	<% end -%>	
+</div>	
+
+<%= content_for :internal_css, @page.style  %>

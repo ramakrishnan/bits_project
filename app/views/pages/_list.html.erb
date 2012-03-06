@@ -1,0 +1,18 @@
+<% widgets = placeholder.widgets
+		widgets.each_with_index do |widget, index|%>
+		<%= content_tag :div, 
+					:id => "widget_#{placeholder.id}_#{widget.id}",
+					:class => "widget_content" do %>
+					<% if widget.is_advertisement? %>	
+						<%= widget.style.to_s.html_safe %>
+					<% else %>
+						<%= render :partial => widget.filename, 
+							:locals => {:widget => widget,
+								:placeholder => placeholder} %>
+						<% unless widget.style.blank? %>			
+						  <%= content_for :internal_css, widget.style %>
+						<% end %>
+					<% end %>
+				<% end %>			
+<% end %>
+
