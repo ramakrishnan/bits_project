@@ -10,10 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120302072115) do
+ActiveRecord::Schema.define(:version => 20120314181128) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories_videos", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "video_id"
+  end
 
   create_table "collections", :force => true do |t|
-    t.string   "type"
+    t.string   "category"
     t.text     "data"
     t.integer  "widget_id"
     t.datetime "created_at"
@@ -36,9 +47,21 @@ ActiveRecord::Schema.define(:version => 20120302072115) do
     t.datetime "updated_at"
   end
 
+  create_table "languages", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "languages_videos", :id => false, :force => true do |t|
+    t.integer "category_id"
+    t.integer "video_id"
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "name"
     t.string   "slug"
+    t.text     "style"
     t.boolean  "is_live"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -57,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20120302072115) do
     t.string   "name"
     t.string   "thumbnail"
     t.string   "embed_src"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
