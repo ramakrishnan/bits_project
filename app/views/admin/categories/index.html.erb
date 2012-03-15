@@ -1,0 +1,18 @@
+<h2> List all Categories </h2>
+<%= link_to "Add New Category", new_admin_category_path, :class => "button link blue" %>
+<table class="table">
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	<% @categories.each_with_index do |category, index|%>
+	<tr class=<%=cycle("odd","even")%> >
+		<td><%= index +1 %></td>
+		<td><%= category.name %></td>
+		<td> <%= link_to "Edit", edit_admin_category_path(category)%></td>
+		<td> <%= link_to "Delete", admin_category_path(category), :method => :delete, :confirm => "are you sure?"%></td>
+	</tr>
+	<% end %>
+</table>

@@ -52,6 +52,8 @@ BitsProject::Application.routes.draw do
        resource :session
        resource :refinement, :controller => "refinement" 
        resources :grids
+       resources :categories
+       resources :languages
      end
 
   match '*slug' => 'pages#show', :format => false

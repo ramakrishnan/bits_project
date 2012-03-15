@@ -1,0 +1,18 @@
+<h2> List all Languages </h2>
+<%= link_to "Add New Language", new_admin_language_path, :class => "button link blue" %>
+<table class="table">
+	<tr>
+		<th>#</th>
+		<th>Name</th>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	<% @languages.each_with_index do |language, index|%>
+	<tr class=<%=cycle("odd","even")%> >
+		<td><%= index +1 %></td>
+		<td><%= language.name %></td>
+		<td> <%= link_to "Edit", edit_admin_language_path(language)%></td>
+		<td> <%= link_to "Delete", admin_language_path(language), :method => :delete, :confirm => "are you sure?"%></td>
+	</tr>
+	<% end %>
+</table>
