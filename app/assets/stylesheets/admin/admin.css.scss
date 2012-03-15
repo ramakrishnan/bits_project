@@ -367,3 +367,16 @@ td span.small_box {
   }
 }
 
+div.video_group {
+	label {
+		float:left;
+	}
+	div.collection_list {
+		padding: 10px 0px 0px 10px;
+		border:1px solid #000000;
+		float:left;
+		width:200px;
+		min-height:200px;
+		overflow-y:scroll;
+	}
+}

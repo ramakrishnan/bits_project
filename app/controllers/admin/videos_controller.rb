@@ -7,10 +7,14 @@ layout 'admin'
 	
 	def new
 		@video = Video.new
+		@categories = Category.all
+		@languages = Language.all
 	end
 	
 	def edit
 		@video = Video.find(params[:id])
+		@categories = Category.all
+		@languages = Language.all
 	end
 	
 	def update

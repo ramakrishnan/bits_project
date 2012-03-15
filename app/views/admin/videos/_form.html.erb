@@ -15,6 +15,27 @@
 	<label for"video_embed_src">Embed SRC</label>
 	<%= text_area :video, :embed_src, :rows => 5, :cols => 40 %>
 </div>
+<div class="element video_group">
+	<label for"video_embed_src">Categories</label>
+	<div class="collection_list">
+		<% @categories.each do |category| %>
+		<div class="list_collection">
+		<%= check_box_tag "video[category_ids][]", category.id, @video.categories.include?(category) %> <%= category.name %>
+		</div>
+		<% end %>
+	</div>	
+</div>	
+<div class="element video_group">
+	<label for"video_embed_src">Languages</label>
+	<div class="collection_list">
+		<% @languages.each do |language| %>
+		<div class="list_collection">
+		<%= check_box_tag "video[language_ids][]", language.id, @video.languages.include?(language) %> <%= language.name %>
+		</div>
+		<% end %>
+	</div>	
+</div>
+
 <div class="form_save">
 	<%= submit_tag "Save", :class => "button large green"%>
 </div>
