@@ -347,14 +347,14 @@ td span.small_box {
 
 #refinement {
 	width:100%;
-	min-height:100px;
 	.collection_list {
 	min-height:100px;
 	float:left;
 	width:300px;
+	overflow-y:auto;	
 	border:1px solid #000000;
-	height:auto;
-	margin-left:20px;
+	height:200px;
+	margin:20px;
 	div {
 	 padding: 5px 0px;
 	 &:hover {

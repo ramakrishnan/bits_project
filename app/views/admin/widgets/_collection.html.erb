@@ -1,10 +1,21 @@
 <h2> Manage Widget Collections</h2>
 <% @widget.collections.each do |collection| %>	
 	<div class="element">
-		<label for"collection_category">Category</label>
+		<label for"collection_category">Type</label>
 		<%= select :collection, :category, Collection.types %>
-		<input type="button" id="get_refinement" value="List"/>
 	</div>
+	<div class="element">
+		<label for"category">Category</label>
+		<%= select_tag :category, options_from_collection_for_select(@categories, "id", "name"), {:prompt => "None"} %>
+	</div>		
+	<div class="element">
+		<label for"language">Language</label>
+		<%= select_tag :language, options_from_collection_for_select(@languages, "id", "name"), {:prompt => "None"} %>
+	</div>			
+	<div class="form_save">
+		<input type="button" id="get_refinement" value="List" class="button large green"/>
+	</div>	
+	
 	
 	<div id="refinement">
 			<div id="collection_list" class="collection_list">
@@ -30,12 +41,16 @@
 			$("#add_to_list").append(target);	    
 	});
 	$("#get_refinement").click( function(e) {
+		var queryData = {};
+		queryData["type"] = $("#collection_category").val();
+		queryData["category"] = $("#category").val();
+		queryData["language"] = $("#language").val();
 		$.ajax({
 				type: "GET",
 				url: "<%=admin_refinement_path%>",
-				data: {type:  $("#collection_category").val() },
+				data: queryData,
 				success: function(resp) {
-					$("#collection_list").append(resp);	
+					$("#collection_list").html(resp);	
 				}
 			});
 		});

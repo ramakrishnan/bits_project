@@ -11,6 +11,8 @@ layout 'admin'
 	
 	def edit
 		@widget = Widget.find(params[:id])
+		@categories = Category.all
+		@languages = Language.all
 	end
 	
 	def update
