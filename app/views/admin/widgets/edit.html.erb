@@ -1,9 +1,21 @@
 <h2> Edit widget </h2>
 <%= form_tag admin_widget_path(@widget), :method => :put, :class => "form_default"  do %>
 <div class="form_data">	
-	<%= render :partial => "form", :locals => {:new_form => false}%>
+<div class="element">
+	<label for"widget_name">Name</label>
+	<%= text_field :widget, :name %>
+</div>
+<div class="element">
+	<label for"widget_width">Width</label>
+	<%= text_field :widget, :width, :readonly => true, :disabled => true %>
+</div>
+<div class="element">
+	<label for"widget_width">Filename</label>
+	<%= text_field :widget, :filename, :readonly => true, :disabled => true %>
+</div>
+	
 	<div class="element">
-		<% if @widget.widget_type == 2 %>
+		<% if @widget.widget_type == WidgetType::TYPES["Advertisement"] %>
 			<label for"widget_code">Ad Script</label>
 			<%= text_area :widget, :style, :rows => 5, :cols => 40 %>
 		<% else %>
@@ -12,7 +24,7 @@
 		<% end %>
 	</div>
 	<div class="element">
-		<% if @widget.widget_type == 3 %>
+		<% if @widget.widget_type == WidgetType::TYPES["Video slider"] %>
 			<%= render :partial => "collection"%>
 		<% end %>		
 	</div>	

@@ -1,7 +1,26 @@
 <h2> Add a new widget </h2>
 <%= form_tag admin_widgets_path, :class => "form_default" do %>
-<div class="form_data">	
-<%= render :partial => "form", :locals => {:new_form => true}%>
+<div class="form_data">
+<div class="element">
+	<label for"widget_name">Name</label>
+	<%= text_field :widget, :name %>
+</div>
+<div class="element">
+	<label for"widget_width">Width</label>
+<%= select("widget", "width", 
+	options_for_select(Grid.all.collect {|g| [ g.width, g.width ] }),
+	 {:prompt => 'Widget Width'}) %>	
+</div>
+<div class="element">
+	<label for"widget_filename">File name</label>
+	<select name="widget[filename]" id="widget_filename">
+		<option vlue="">Select filename</option>
+		<%= option_tags_for_filetypes.each do |option| %>
+			<%= option %>
+		<% end %>
+	</select>	
+</div>
+
 <div class="element">
 	<label for"widget_filename">Widget Type</label>
 <%= select("widget", "widget_type", 
@@ -13,4 +32,7 @@
 	 <%= link_to "Cancel", admin_widgets_path, :class => "button link  blue"%>
 </div>
 </div>
+<% end %>
+<%= content_for :internal_javascript do %>
+	Admin.initWidget();	
 <% end %>

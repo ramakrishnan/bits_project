@@ -1,8 +1,6 @@
 var Admin = function () {
-	
-	var page = function() {
 
-	var initilize = function () {
+	var initilizePage = function () {
 		$("#available_placeholders div").click(selectPlaceholder);
 		$("#add_placeholder").click(addPlaceholder);
 		$("#save_page").click(collectPlaceholders);
@@ -88,14 +86,22 @@ var Admin = function () {
 		return curWidth;
 	};
 	
-	return {
-		initilize: initilize,
-		initPlaceWidget: initPlaceWidget
-		}	
-	}();
-
+	var initWidget = function() {
+		hideWidgetsFilenames("");
+		$("#widget_width").change(function(event) {
+			var reqWidth = event.target.value;
+			hideWidgetsFilenames(reqWidth);
+		});	
+	};
 	
+	var hideWidgetsFilenames = function(width) {
+			$("#widget_filename option").hide();
+			$("#widget_filename option[data-width="+width+"]").show();
+			$("#widget_filename").val("");		
+	};		
 return {
-	page: page
+		initilizePage: initilizePage,
+		initPlaceWidget: initPlaceWidget,
+		initWidget:initWidget	
 };
 }();
