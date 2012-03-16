@@ -5,6 +5,8 @@
 	<% query = CGI.parse(request.query_string) 
 	   query.merge!("page" => @refinements.next_page) 
 	   query.merge!("type" => query["type"].first) 
+	   query.merge!("category" => query["category"].first)
+	   query.merge!("language" => query["language"].first)
 	-%>
 	<%= link_to "More", admin_refinement_path(query), :remote => "true", :id => "load_more_refinement"%>
 	<% end %>
