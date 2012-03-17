@@ -1,4 +1,7 @@
 <h2> Edit widget </h2>
+<% if @widget.errors.any? %>
+	<%= render :partial => "admin/errors", :locals => {:object => @widget }%>
+<% end %>
 <%= form_tag admin_widget_path(@widget), :method => :put, :class => "form_default"  do %>
 <div class="form_data">	
 <div class="element">

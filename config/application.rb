@@ -48,6 +48,6 @@ module BitsProject
 	config.assets.precompile << /(^[^_]|\/[^_])[^\/]*$/    
 	
     # Custom validation error message appearance
-    # config.action_view.field_error_proc = Proc.new { |html_tag, instance| "<div class='field_with_errors'>#{html_tag}</div>".html_safe }
+     config.action_view.field_error_proc = Proc.new { |html_tag, instance| "#{html_tag}".html_safe }
   end
 end
