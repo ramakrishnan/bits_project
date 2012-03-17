@@ -9,7 +9,8 @@
 	<div class="container">
 		<% 10.times do |count|%>
 		<div class="item">
-			<%= image_tag "/assets/video_camera.png", :size => "119x50"%>
+			<%= image_tag "/assets/video_camera.png", :size => "119x80"%>
+			<%=link_to "Video_#{count}", "#"%>	
 		</div>
 		<% end %>
 	</div>	
