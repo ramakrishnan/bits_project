@@ -1,9 +1,11 @@
-<% unless collection.category.blank? %>
-<% result = collection.category.constantize.find(collection.data) 
-   result.each do |data|    	
-%>
-<div class="list_collection">
+<% unless collection.category.blank? or collection.data.blank?
+   model = collection.category.constantize	
+-%>	
+<div class="collection_list" id="add_to_list">
+<% Video.find(collection.data).each do |data|%>
 	<%= check_box_tag "collection[data][]", data.id, true %> <%= data.name %>
-</div>
 <% end %>
+</div>
+<% else %>
+	<div class="collection_list" id="add_to_list"></div>
 <% end %>

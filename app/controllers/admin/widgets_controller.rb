@@ -19,6 +19,7 @@ layout 'admin'
 		@widget = Widget.find(params[:id])
 		if @widget.update_attributes(params[:widget])
 			@widget.collections.each do |collection|
+				params[:collection].merge!(:data => []) if params[:collection][:data].blank?
 				collection.update_attributes(params[:collection])
 			end
 			redirect_to admin_widgets_path

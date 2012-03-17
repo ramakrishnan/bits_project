@@ -11,23 +11,21 @@
 	<div class="element">
 		<label for"language">Language</label>
 		<%= select_tag :language, options_from_collection_for_select(@languages, "id", "name"), {:prompt => "None"} %>
-	</div>			
-	<div class="form_save">
 		<input type="button" id="get_refinement" value="List" class="button large green"/>
 	</div>	
 	
 	
-	<div id="refinement">
-			<div id="collection_list" class="collection_list">
-				<span>Available List</span>
-			</div>	
-			<div id="add_to_list" class="collection_list">
-				<span>Selected List</span>
+
+			<div class="element video_group">
+				<label>Available List</label>
+				<div id="collection_list" class="collection_list"></div>	
+			</div>		
+			<div class="element video_group">
+				<label>Selected List</label>	
 					<%= render :partial => "collection_list", 
 						:locals => {:collection => collection} %>
-				</div>
-			</div>		
-	</div>
+			</div>
+
 <% end %>
 
 <%= content_for :internal_javascript do %>
