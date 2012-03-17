@@ -56,7 +56,8 @@ BitsProject::Application.routes.draw do
        resources :languages
      end
 
-  match '*slug' => 'pages#show', :format => false
+	resource :search, :controller => "search"
+  	match '*slug' => 'pages#show', :format => false
   
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
