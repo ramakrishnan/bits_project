@@ -7,6 +7,7 @@
 		<th>Thumbnail</th>
 		<th>Description</th>
 		<th>Edit</th>
+		<th>Delete</th>
 	</tr>
 	<% @videos.each_with_index do |video, index|%>
 	<tr class=<%=cycle("odd","even")%> >
@@ -15,6 +16,7 @@
 		<td><%= video.thumbnail %></td>
 		<td><%= video.description %></td>
 		<td> <%= link_to "Edit", edit_admin_video_path(video)%></td>
+		<td> <%= link_to "Delete", admin_video_path(video), :method => :delete, :confirm => "Are you sure?"%></td>
 	</tr>
 	<% end %>
 	<%= will_paginate @videos %>

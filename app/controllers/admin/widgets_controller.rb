@@ -38,8 +38,7 @@ layout 'admin'
 	end
 	
 	def destroy
-		@widget = Widget.find(params[:id])
-		@widget.delete
+		Widget.destroy(params[:id])
 		redirect_to admin_widgets_path
 	end
 	

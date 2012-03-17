@@ -36,8 +36,7 @@ layout 'admin'
 	end
 	
 	def destroy
-		@video = Video.find(params[:id])
-		@video.delete
+		Video.destroy(params[:id])
 		redirect_to admin_videos_path
 	end
 end
