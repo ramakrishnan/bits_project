@@ -1,0 +1,45 @@
+body {
+	margin-top: 1.0em;
+	background-color: #ffffff;
+    color: #333333;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 16px;
+}
+h1, h2, h3, #txtlzr {
+	font-family: 'Arial',sans-serif;
+}
+h1 {
+    font-size: 100px;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+h2 {
+	font-size: 28px;
+}
+pre {
+    font-size: 14px;
+    line-height: 18px;
+    text-shadow: none;
+}
+a {
+    color: #333333;
+}
+a:hover {
+    color: #000000;
+}
+p {
+    line-height: 1.4em;
+}
+#container {
+	margin: 0 auto;
+	width: 800px;
+    background: url("/images/bg.png") repeat scroll 0 0 transparent;
+}
+#txtlzr {
+	margin-top: 20px;
+    font-size: 30px;
+    width: 700px;
+    height: 200px;
+    padding:10px;
+}

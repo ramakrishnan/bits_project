@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>	
+<meta charset="utf-8">
+<title>Cuepoint.js. A plugin for HTML5 video cuepoints and subtitles</title>
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/plugins/cuepoint.css" type="text/css" />
+<!-- Mobile Specific Meta Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<!-- The cuepoint stuff is here -->
+<script src='/assets/plugins/cuepoint.js'></script>
+<script>
+$(document).ready(function(){
+//Slides object with a time (integer) and a html string
+var slides = {
+0: "This is the first subtitle. You can put html in here if you like",
+4: "A fluffy thing eating some grass.",
+12: "Oh look it's a castle on a hill. Nice",
+23: "Some horses",
+34: "Wow look at those woolly sheep eating grass.",
+40: "For more information on this plugin visit github/owainlewis or email owain@owainlewis.com",
+50: "Cuepoint.js is an open source plugin for adding subtitles and cue-points to your HTML5 video"
+}
+//Start cuepoint and pass in our the subtitles we want
+cuepoint.init(slides);
+
+//You can set your own skip to links by using the cuepoint.setTime(seconds) function
+$('#1').click(function(){ cuepoint.setTime(40)});
+$('#2').click(function(){ cuepoint.setTime(80)});
+$('#3').click(function(){ cuepoint.setTime(60)});
+$('#4').click(function(){ cuepoint.setTime(60)});
+});
+</script>
+<!-- End Cuepoint example code -->
+</head>
+<body>
+<div id='inside'>
+<div id="container">
+	<!-- Start Cuepoint -->
+	<section id='cuePlayer'>
+		<video id='video' width="768" preload="auto" controls poster="/images/cuepoint/poster.jpg">
+			<source src='/video/dartmoor.mp4' />
+		</video>
+		<div id='subtitles'></div>
+	</section>
+	<div id='thumbs'>
+		<img id='1' src='/images/cuepoint/thumb1b.jpg' alt='cuepoint image' class='thumbnail' />
+		<img id='2' src='/images/cuepoint/thumb2b.jpg' alt='cuepoint image' class='thumbnail' />
+		<img id='3' src='/images/cuepoint/thumb3b.jpg' alt='cuepoint image' class='thumbnail' />
+		<img id='4' src='/images/cuepoint/thumb4b.jpg' alt='cuepoint image' class='thumbnail' />
+	</div>
+	<!-- End Cuepoint -->
+</div>
+</div>
+</body>
+</html>
