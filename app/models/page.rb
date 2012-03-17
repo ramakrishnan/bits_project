@@ -2,10 +2,6 @@ class Page < ActiveRecord::Base
 	has_many :placeholders, :order => "`row`, `column`", :dependent => :destroy
 	has_many :grids, :through => :placeholders
 	
-	before_destroy {|video|  
-		video.categories.clear
-		video.languages.clear
-	}
 	validates_presence_of :name, :slug
 	validates_uniqueness_of :slug
 	
