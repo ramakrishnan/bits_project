@@ -10,6 +10,8 @@ font-size: 14px;
 background-color:#c2c2c2;
 }
 
+@import "partial/form";
+
 #navigation {
 	width: 960px;
 	height:25px;
@@ -36,55 +38,6 @@ background-color:#c2c2c2;
 	}
 }
 
-.form_data {
-	width: 957px;
-	margin-bottom: 30px;
-}
-
-.form_default .element {
-	width: 100%;
-	margin-bottom: 15px;
-	position: relative;
-}
-
-.form_default .element label {
-	display: inline-block;
-	width: 11%;
-	margin-right: 2.5%;
-	text-align: right;
-	line-height: 16px;
-}
-
-label {
-	color: #666;
-	font-family: 'Helvetica Neue', Arial,Helvetica, Verdana, sans-serif;
-	font-weight: bold;
-}
-
-input[type="text"], input[type="password"], input[type="email"], textarea {
-	font-weight: 300;
-}
-
-input[type="text"], input[type="password"], input[type="email"], textarea, select  {
-	padding: 10px;
-	height: auto;
-	font-family: 'Helvetica Neue', Arial,Helvetica, Verdana, sans-serif;
-	font-size: 16px;
-	line-height: 16px;
-	border: 1px solid #B6B6B6;
-	border-radius: 3px;
-	background-clip: padding-box;
-	transition: border-color ease-out 0.3s;
-	transition: box-shadow ease-out 0.3s;
-	color: #404040;
-}
-
-.form_default .element select {
-	padding: 5px;
-}
-.form_default .form_save {
-	clear: both;
-}
 
 .button.large {
 	border-radius: 4px;
@@ -181,36 +134,11 @@ input[type="text"], input[type="password"], input[type="email"], textarea, selec
 	background-color:#FFFFFF;
 }
 
-$scale_by: 2;
-$actual_966: 966;
-$actual_300: 300;
-$actual_485: 485;
-$actual_165: 165;
-$actual_620: 620;
-$actual_658: 658;
 
-$scaled_966: ($actual_966/$scale_by);
-$scaled_300: ($actual_300/$scale_by);
-$scaled_485: ($actual_485/$scale_by);
-$scaled_165: ($actual_165/$scale_by);
-$scaled_620: ($actual_620/$scale_by);
-$scaled_658: ($actual_658/$scale_by);
-
-
-@mixin placeholder_space($scale_by) {
-	margin-top:#{(8/$scale_by)}px;
-	margin-right:#{(8/$scale_by)}px;
+@mixin placeholder_space {
 	font-size:14px;
 	padding: 2px 0px 0px 0px;
 	text-indent:10px;
-	@if $scale_by == 1 {
-		min-height:50px;
-	} @else {
-		height:20px;
-		&:hover {
-		cursor:pointer;
-		}
-	}
 }
 
 #build_layout {
@@ -218,25 +146,23 @@ $scaled_658: ($actual_658/$scale_by);
 }
 #available_placeholders {
 		float:left;
-		width:#{$scaled_966+10}px;
+		width:491px;
 }
 
 #page_layout {
 	float:left;
-	width:#{$scaled_966}px;
+	width:491px;
 	div {
 		float:left;
 	}
 }	
 
 
-@mixin widget_listing($width) {
+@mixin widget_listing {
 	.page_widget {
-		width: #{$width - 20}px;
-		margin:10px;
+		margin:auto;
 		background-color:#FFFFFF;
 		.widgets {
-			width: #{$width - 40}px;
 			margin:10px;
 			background-color:#F0F0F0;
 			line-height:1.5;
@@ -261,83 +187,43 @@ $scaled_658: ($actual_658/$scale_by);
 	}
 
 #place_widget {
-	width:#{$actual_966+10}px;
+	width:966px;
 	margin: 0px auto;
 	.grid_name {
 		width:50px;
 		margin-top:5px;
 		margin-left:5px;
 	}
+
 	.row {
-		width: #{$actual_966 + 8 }px;
+		width: 974px;
 	.column {
 		float:left;
 	}
-	.width_966 {
-		@include placeholder_space(1);
-		width: #{$actual_966}px;
-		@include widget_listing($actual_966);
-	}
-	.width_300 {
-		@include placeholder_space(1);
-		width: #{$actual_300}px;
-		@include widget_listing($actual_300);
-	}
-	.width_485 {
-		@include placeholder_space(1);
-		width: #{$actual_485}px;
-		@include widget_listing($actual_485);
+	.widget_width {
+		@include placeholder_space;
+		&:hover {
+			cursor:pointer;
+		}		
+		@include widget_listing;
+		margin:8px 8px 0px 0px;	
+		min-height:50px;
 	}	
-	.width_165 {
-		@include placeholder_space(1);
-		width: #{$actual_165}px;
-		@include widget_listing($actual_165);
-	}
-	.width_658 {
-		@include placeholder_space(1);
-		width: #{$actual_658}px;
-		@include widget_listing($actual_658);
-	}
-	.width_620 {
-		@include placeholder_space(1);
-		width: #{$actual_620}px;
-		@include widget_listing($actual_620);
-	}
   }
 }
 
 
-#available_placeholders, #page_layout {
+#available_placeholders, #page_layout{
 	.row {
-		width: #{$scaled_966 + 8 }px;
+		width: 491px;
 	}
 	.selected {
 		border: 1px solid red;
 	}
-
-	.width_966 {
-		@include placeholder_space(2);
-		width: #{$scaled_966}px;
-	}
-	.width_300 {
-		@include placeholder_space(2);
-		width: #{$scaled_300}px;
-	}
-	.width_485 {
-		@include placeholder_space(2);
-		width: #{$scaled_485}px;
-	}	
-	.width_165 {
-		@include placeholder_space(2);
-		width: #{$scaled_165}px;
-	}
-	.width_658 {
-		@include placeholder_space(2);
-		width: #{$scaled_658}px;
-	}
-	.width_620 {
-		@include placeholder_space(2);
-		width: #{$scaled_620}px;
+	.widget_width {
+		@include placeholder_space;
+		margin: 4px 4px 0px 0px;
+		height:20px; 
 	}
 }	
 

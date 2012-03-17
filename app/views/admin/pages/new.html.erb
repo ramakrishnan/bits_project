@@ -14,8 +14,8 @@
 	<div id="available_placeholders">
 		<% @grids.each do |grid| %>
 			<%= content_tag :div, 
-				:class => "width_#{grid.width}",
-				:style => "background-color:#{grid.color}", 
+				:class => "widget_width",
+				:style => "background-color:#{grid.color};width:#{grid.width/2}px;", 
 				"data-width" => grid.width,
 				"data-template_id" => grid.id do %>
 					<%= grid.name %> <%= grid.width %>

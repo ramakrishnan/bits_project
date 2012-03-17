@@ -1,7 +1,7 @@
-	<div class="page_widget">
+	<div class="page_widget" style="width:<%=grid.width - 10%>px;">
 					<% widgets = placeholder.widgets
 						widgets.each_with_index do |widget, index|%>
-						<div class="widgets">
+						<div class="widgets" style="width:<%=grid.width - 40%>px;">
 							<span class="position"><%= index + 1%></span>
 							<span class="widget_title"><%= widget.name%></span>
 						<div class="widgets_links">
