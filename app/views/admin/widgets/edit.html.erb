@@ -17,7 +17,11 @@
 	<label for"widget_width">Filename</label>
 	<%= text_field :widget, :filename, :readonly => true, :disabled => true %>
 </div>
-	
+<div class="element">
+	<label for"widget_code">Properties</label>
+	<%#= @widget.properties.to_json %>
+	<%= text_area :widget, :properties, :rows => 5, :cols => 40, :value => @widget.read_properties %>	
+</div>		
 	<div class="element">
 		<% if @widget.is_advertisement? %>
 			<label for"widget_code">Ad Script</label>
