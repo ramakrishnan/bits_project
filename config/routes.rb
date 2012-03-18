@@ -57,6 +57,8 @@ BitsProject::Application.routes.draw do
      end
 
 	resource :search, :controller => "search"
+	resource :video, :controller => "video"
+	
   	match '*slug' => 'pages#show', :format => false
   
   # You can have the root of your site routed with "root"

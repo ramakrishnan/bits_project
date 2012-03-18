@@ -6,7 +6,7 @@
 		<% @refinements.each  do |item|%>
 		<div class="item">
 			<%= image_tag "/assets/video_camera.png", :size => "119x80"%>
-			<%=link_to item.name.truncate(15), "#", :alt => item.name %>	
+			<%=link_to item.name.truncate(15), video_path(:id => item.id), :alt => item.name %>	
 		</div>
 		<% end %>
 	</div>
