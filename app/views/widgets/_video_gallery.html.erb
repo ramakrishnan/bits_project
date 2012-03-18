@@ -1,0 +1,16 @@
+<div class="video_gallery_793">
+	<div class="widget_title">
+		<h2 class="left">Search Result</h2>
+	</div>	
+	<div class="container">
+		<% @refinements.each  do |item|%>
+		<div class="item">
+			<%= image_tag "/assets/video_camera.png", :size => "119x80"%>
+			<%=link_to item.name.truncate(15), "#", :alt => item.name %>	
+		</div>
+		<% end %>
+	</div>
+	<%= will_paginate @refinements %>	
+</div>
+
+	

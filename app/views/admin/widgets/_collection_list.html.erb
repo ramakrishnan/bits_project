@@ -2,9 +2,11 @@
    model = collection.category.constantize	
 -%>	
 <div class="collection_list" id="add_to_list">
-<% Video.find(collection.data).each do |data|%>
-	<%= check_box_tag "collection[data][]", data.id, true %> <%= data.name %>
-<% end %>
+	<% Video.find(collection.data).each do |data|%>
+	<div class="list_collection">	
+		<%= check_box_tag "collection[data][]", data.id, true %> <%= data.name %>
+	</div>	
+	<% end %>
 </div>
 <% else %>
 	<div class="collection_list" id="add_to_list"></div>

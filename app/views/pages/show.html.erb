@@ -12,8 +12,9 @@
 		<%= content_for "row_#{placeholder.row}" do %>
 		<%= content_tag :div, 
 					:id => "placeholder_#{placeholder.id}",
-					:class => "width_#{grid.width} column" do %>
-					<%= render :partial => "list", 
+					:class => "widget_width column",
+					:style => "width:#{grid.width + 8}px;" do %>
+					<%= render :partial => "pages/list", 
 						:locals => {:placeholder => placeholder, :grid => grid}  %>						
 				<% end %>
 		<% end -%>
