@@ -1,4 +1,5 @@
 <h2> Edit widget </h2>
+<%= render :partial => "rich_text_editor" if @widget.is_advertisement? %>
 <% if @widget.errors.any? %>
 	<%= render :partial => "admin/errors", :locals => {:object => @widget }%>
 <% end %>
@@ -18,9 +19,9 @@
 </div>
 	
 	<div class="element">
-		<% if @widget.widget_type == WidgetType::TYPES["Advertisement"] %>
+		<% if @widget.is_advertisement? %>
 			<label for"widget_code">Ad Script</label>
-			<%= text_area :widget, :style, :rows => 5, :cols => 40 %>
+			<%= text_area :widget, :style, :rows => 25, :cols => 40, :class => "richTextEditor" %>
 		<% else %>
 			<label for"widget_code">Widget Styles</label>
 			<%= text_area :widget, :style, :rows => 5, :cols => 40 %>
