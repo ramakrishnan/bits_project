@@ -23,9 +23,7 @@ class Widget < ActiveRecord::Base
 		["Video gallery", "/widgets/video_gallery.html.erb",793]]
 
 	before_save {|widget|
-		puts "==" * 20
-		puts widget.properties.inspect
-		widget.properties = JSON["#{widget.properties}"]
+		widget.properties = JSON["#{widget.properties}"] unless widget.properties.blank?
 	}
 	def is_advertisement?
 		widget_type == WidgetType::TYPES["Advertisement"]
@@ -39,7 +37,7 @@ class Widget < ActiveRecord::Base
 		str = str.gsub("},", "},\n")
 		str = str.gsub("{", "{\n")
 		str = str.gsub(",\"", ",\n\"")
-		data = str.split()
+		data = str.split("\n")
 		indent = 0
 		res = []
 		data.each do |line|

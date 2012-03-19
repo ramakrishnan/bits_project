@@ -5,13 +5,13 @@
 		<form action = "/search" method="get" class="form_default">
 			<div class="form_data" style="width:165px;">
 				<div class="element">
-					<label for"category">Category</label>
+					<label for"category"> <%=widget.properties["title_1"]%> </label>
 				</div>		
 				<div class="element">		
 					<%= select_tag_for_categories %>
 				</div>	
 				<div class="element">
-					<label for"language">Language</label>
+					<label for"language"> <%=widget.properties["title_2"]%> </label>
 				</div>		
 				<div class="element">		
 					<%= select_tag_for_languages %>
