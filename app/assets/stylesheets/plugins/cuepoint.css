@@ -1,0 +1,220 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none; }
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+textarea {
+  overflow: auto; }
+
+.ie6 legend, .ie7 legend {
+  margin-left: -7px; }
+
+input[wtype="radio"] {
+  vertical-align: text-bottom; }
+
+input[type="checkbox"] {
+  vertical-align: bottom; }
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline; }
+
+.ie6 input {
+  vertical-align: text-bottom; }
+
+label, input[type="button"], input[type="submit"], input[type="image"], button {
+  cursor: pointer; }
+
+button, input, select, textarea {
+  margin: 0; }
+
+/* --------------------------------------------------------------
+
+TYPOGRAPHY
+
+-------------------------------------------------------------- */
+/* Default fonts and colors. */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, dl, input, textarea {
+  line-height: 1.5;
+  font-family: "Myriad Pro", Frutiger, Univers, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #999999;
+  font-size: 14px; }
+
+/* --------------------------------------------------------------
+
+HEADINGS
+
+-------------------------------------------------------------- */
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+  margin-bottom: 10px; }
+
+h1 {
+  font-size: 24px; }
+
+h2 {
+  font-size: 20px; }
+
+h3 {
+  font-size: 16px; }
+
+h4 {
+  font-size: 14px; }
+
+h5 {
+  font-size: 14px; }
+
+
+/* --------------------------------------------------------------
+
+IMAGES
+
+-------------------------------------------------------------- */
+img {
+  margin-bottom: 10px; }
+
+figcaption {
+  display: block;
+  font-weight: bold;
+  font-style: italic; }
+
+
+html{background:#eee}
+body {
+  background: #eee;margin:20px;color:#999 }
+  
+#inside{background:#222;min-width:768px;}
+
+#container {
+  width: 768px;
+  margin: 0 auto;
+  padding: 20px 0;
+  overflow: hidden; }
+
+hgroup {
+  text-align: center;
+  margin-bottom: 20px;
+  overflow: hidden; }
+  hgroup h1 {
+    margin-bottom: 0px;
+    color: #FFF;
+    font-size: 48px;
+    font-family: Georgia, Garamond; }
+  hgroup h2 {
+    color: #ccc;font-family: Georgia, Garamond; }
+
+section {
+  margin-bottom: 20px -5;
+  overflow: hidden; }
+
+#cuePlayer {
+  overflow: hidden;
+  width: 768px;
+  position: relative; }
+
+#video {
+  width: 768px;
+  margin: 0 auto 10px auto;
+  background: #555; }
+  
+#tweet a {text-align:center}
+
+#intro {
+  min-height: 120px;
+  opacity: 8;
+  padding:20px 0 20px 0;
+  clear: both; }
+  #intro h1, #intro h2, #use h2 {
+    color: #FFF;
+    font-family: 'Georgia'; }
+  #cuepoint p {
+    color: #999; }
+    
+#thumbs {
+  width: 100%;
+  clear: both;
+  margin: 0 0 20px 0;
+  overflow: hidden; }
+  #thumbs #thumbHolder {
+    width: 2000px;
+    position: relative;
+    left: 0;
+    overflow: hidden;
+    -moz-transition: all 0.5s ease-in-out;
+    /* FF3.7+ */
+    -o-transition: all 0.5s ease-in-out;
+    /* Opera 10.5 */
+    -webkit-transition: all 0.5s ease-in-out;
+    /* Saf3.2+, Chrome */
+    transition: all 0.5s ease-in-out; }
+  #thumbs .thumbnail {
+    width: 182px;
+    height: 182px;
+    background: #333;
+    display: block;
+    float: left;
+    margin-right: 13px;
+    cursor: pointer; }
+  #thumbs .thumbnail:last-child {
+    margin-right: 0; }
+    
+#subtitles{position:absolute;top:0;width:100%;background:url(/images/cuepoint/subtitle.png) repeat;opacity:1;height:40px;color:#FFF;line-height:40px;padding:0 20px;}
+footer {
+  margin: 40px 0; }
+  footer p {
+    text-align: center; }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Textualizer</title>
+    <meta name="description" content="Textualizer is a jQuery plugin that lets you transition through blurbs of text">
+    <meta name="keywords" content="jQuery, jQuery plugin, text animation, text transition">
+     <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="/assets/plugins/textualizer.js"></script>
+    <link href="/assets/plugins/textualize.css" rel="stylesheet" type="text/css"></style>
+  </head>
+  <body>
+      <div id="container">
+          <div id="txtlzr">
+          </div>
+        </div>
+  </body>
+  <script>
+    $(function() {
+        var list = ['If you have built castles in the air, your work need not be lost; that is where they should be. Now put foundations under them.'
+                  ,'Life has no smooth road for any of us; and in the bracing atmosphere of a high aim the very roughness stimulates the climber to steadier steps, till the legend, over steep ways to the stars, fulfills itself.'
+                  , 'The more difficulties one has to encounter, within and without, the more significant and the higher in inspiration his life will be.'
+                  , 'Do we not all agree to call rapid thought and noble impulse by the name of inspiration?'];
+
+        var txt = $('#txtlzr');
+        txt.textualizer(list, { duration: 3000 });
+        txt.textualizer('start');
+    });
+
+  </script>
+</html>
