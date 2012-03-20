@@ -1,3 +1,24 @@
-<div style="border:1px solid black;">
-	Search Widget
+<div class="video_slider_165">
+	<div class="widget_title">
+		<h2>Search</h2>
+	</div>
+		<form action = "/search" method="get" class="form_default">
+			<div class="form_data" style="width:165px;">
+				<div class="element">
+					<label for"category">Category</label>
+				</div>		
+				<div class="element">		
+					<%= select_tag_for_categories %>
+				</div>	
+				<div class="element">
+					<label for"language">Language</label>
+				</div>		
+				<div class="element">		
+					<%= select_tag_for_languages %>
+				</div>				
+				<div class="element">		
+					<input type="submit" value="Search">
+				</div>								
+			</div>	
+		</form>	
 </div>	

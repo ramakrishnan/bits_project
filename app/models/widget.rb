@@ -1,9 +1,10 @@
 class Widget < ActiveRecord::Base
-	has_many :holdings
-	has_many :collections
+	has_many :holdings, :dependent => :destroy
+	has_many :collections, :dependent => :destroy
 	has_many :placeholders, :through => :holdings
 	
 	validates_presence_of :filename, :unless => Proc.new{|w| w.is_advertisement?}  
+	validates_length_of :name, :maximum => 255
 	validates_presence_of :name, :width, :widget_type
 	
 		

@@ -1,3 +1,6 @@
+<% if @category.errors.any? %>
+	<%= render :partial => "admin/errors", :locals => {:object => @category }%>
+<% end %>
 <div class="form_data">
 <div class="element">
 	<label for"category_name">Name</label>

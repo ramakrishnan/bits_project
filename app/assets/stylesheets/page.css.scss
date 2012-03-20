@@ -57,13 +57,25 @@ $actual_658: 658;
 
 // Site CSS
 
-@import "partial/header",
+
+@import "partial/common",
+		"partial/header",
 		"partial/footer",
-		"partial/slider_485"
+		"partial/form",
+		"partial/slider_485";
+		
 
+ select {
+	padding: 2px;
+}
 
+.form_default .element {
+  margin-bottom:5px;
+}
 
-
+.form_default .element label {
+	width:auto;
+}
 
 
 

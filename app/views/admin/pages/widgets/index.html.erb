@@ -14,8 +14,8 @@
 		
 		<%= content_for "row_#{placeholder.row}" do %>
 		<%= content_tag :div, 
-					:class => "width_#{grid.width} column",
-					:style => "background-color:#{grid.color}" do %>
+					:class => "widget_width column",
+					:style => "background-color:#{grid.color};width:#{grid.width}px;" do %>
 					<div class="grid_name"><%=grid.name%> <%=grid.width%> </div>	
 					<%= render :partial => "list", 
 						:locals => {:placeholder => placeholder, :grid => grid}  %>						

@@ -14,7 +14,8 @@
 		<td><%= widget.name %></td>
 		<td><%= widget.width %></td>
 		<td> <%= link_to "Edit", edit_admin_widget_path(widget)%></td>
-		<td> <%= link_to "Delete", admin_widget_path(widget), :method => :delete, :confirm => "Are you sure?"%></td>
+		<td> <%= link_to "Delete", admin_widget_path(widget), :method => :delete, 
+			:confirm => "Delete will remove from pages where this widget is used \n Are you sure?"%></td>
 	</tr>
 	<% end %>
 </table>

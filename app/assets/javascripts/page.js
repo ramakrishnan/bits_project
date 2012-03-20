@@ -7,11 +7,12 @@ var Page = function () {
 	
 	var slideItems = function(slide, target) {
 		var direction = target.hasClass("slide_right") ? "right" : "left";
-		var container = target.parents().find(".widget_title").next();
+		var container = target.parent().parent().next();
 		var totalItems = container.children().length;
 		var item = container.children().first();
-		var width = parseInt(item.css("width"),10);
+		var width = item.outerWidth();
 		var currentLeft = parseInt(container.css("left"),10);
+		
 		var hasMoreItems = ( (currentLeft/width) + totalItems > 4 );
 		if (direction == "right" && currentLeft == 0) {
 			return;
@@ -20,7 +21,9 @@ var Page = function () {
 			return
 		}
 		currentLeft+= direction == "left" ? (-1)*width : width
-		container.css("left",currentLeft);
+		container.animate(
+    		{ left: currentLeft },
+    		{ duration: 'slow' });
 	};
 	return {
 		initFourSlider: initFourSlider

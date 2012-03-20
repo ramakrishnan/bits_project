@@ -34,8 +34,7 @@ class Admin::LanguagesController < ApplicationController
 	end
 	
 	def destroy
-		@language = Language.find(params[:id])
-		@language.destroy if @language
+		Language.destroy(params[:id])
 		redirect_to admin_languages_path
 	end
 end

@@ -34,8 +34,7 @@ class Admin::CategoriesController < ApplicationController
 	end
 	
 	def destroy
-		@category = Category.find(params[:id])
-		@category.destroy if @category
+		Category.destroy(params[:id])
 		redirect_to admin_categories_path
 	end
 end

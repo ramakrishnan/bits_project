@@ -46,4 +46,9 @@ layout 'admin'
 		@grids = Grid.all
 		@page = Page.new
 	end
+	
+	def destroy
+		Page.destroy(params[:id])
+		redirect_to admin_pages_path
+	end
 end

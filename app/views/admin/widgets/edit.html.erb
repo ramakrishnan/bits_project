@@ -1,4 +1,7 @@
 <h2> Edit widget </h2>
+<% if @widget.errors.any? %>
+	<%= render :partial => "admin/errors", :locals => {:object => @widget }%>
+<% end %>
 <%= form_tag admin_widget_path(@widget), :method => :put, :class => "form_default"  do %>
 <div class="form_data">	
 <div class="element">
@@ -23,11 +26,9 @@
 			<%= text_area :widget, :style, :rows => 5, :cols => 40 %>
 		<% end %>
 	</div>
-	<div class="element">
-		<% if @widget.widget_type == WidgetType::TYPES["Video slider"] %>
-			<%= render :partial => "collection"%>
-		<% end %>		
-	</div>	
+	<% if @widget.widget_type == WidgetType::TYPES["Video slider"] %>
+		<%= render :partial => "collection"%>
+	<% end %>		
 	<div class="form_save">
 		<%= submit_tag "Save", :class => "button large green" %>
 		<%= link_to "Cancel", edit_admin_widget_path(@widget), :class => "button link  blue"%>
