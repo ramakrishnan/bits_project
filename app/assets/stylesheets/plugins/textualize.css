@@ -31,7 +31,7 @@ a:hover {
 p {
     line-height: 1.4em;
 }
-#container {
+#container_textualize {
 	margin: 0 auto;
 	width: 800px;
     background: url("/images/bg.png") repeat scroll 0 0 transparent;
