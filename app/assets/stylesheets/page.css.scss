@@ -12,7 +12,7 @@ $actual_165: 165;
 $actual_620: 620;
 $actual_658: 658;
 
-@mixin widget_listing($width) {
+@mixin widget_listing {
 	.widget_content {
 		margin-top:8px;
 		margin-right:8px;
@@ -24,33 +24,12 @@ $actual_658: 658;
 	width:#{$actual_966+10}px;
 	margin: 0px auto;
 	.row {
-		width: #{$actual_966 + 8 }px;
+		width: 974px;
 	.column {
 		float:left;
 	}
-	.width_966 {
-		width: #{$actual_966 + 8}px;
-		@include widget_listing($actual_966);
-	}
-	.width_300 {
-		width: #{$actual_300 + 8}px;
-		@include widget_listing($actual_300);
-	}
-	.width_485 {
-		width: #{$actual_485 + 8}px;
-		@include widget_listing($actual_485);
-	}	
-	.width_165 {
-		width: #{$actual_165 + 8}px;
-		@include widget_listing($actual_165);
-	}
-	.width_658 {
-		width: #{$actual_658 + 8}px;
-		@include widget_listing($actual_658);
-	}
-	.width_620 {
-		width: #{$actual_620 + 8}px;
-		@include widget_listing($actual_620);
+	.widget_width {
+		@include widget_listing;
 	}
 	}
 }
@@ -62,7 +41,8 @@ $actual_658: 658;
 		"partial/header",
 		"partial/footer",
 		"partial/form",
-		"partial/slider_485";
+		"partial/slider_485",
+		"partial/video_gallery";		
 		
 
  select {

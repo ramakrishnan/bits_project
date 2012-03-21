@@ -17,7 +17,8 @@ class Widget < ActiveRecord::Base
 		["header menu", "/widgets/header_menu.html.erb",966],
 		["textualize", "/widgets/textualize.html.erb",966],
 		["html5video", "/widgets/html5video_subtitle.html.erb",966],
-		["home page static content", "/widgets/homepage_content.html.erb",485]]
+		["home page static content", "/widgets/homepage_content.html.erb",485],
+		["Video gallery", "/widgets/video_gallery.html.erb",793]]
 
 	def is_advertisement?
 		widget_type == WidgetType::TYPES["Advertisement"]
