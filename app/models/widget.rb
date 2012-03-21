@@ -18,6 +18,7 @@ class Widget < ActiveRecord::Base
 		["textualize", "/widgets/textualize.html.erb",966],
 		["html5video", "/widgets/html5video_subtitle.html.erb",966],
 		["home page static content", "/widgets/homepage_content.html.erb",485],
+		["news ticker", "/widgets/news_ticker.html.erb",966],
 		["Video gallery", "/widgets/video_gallery.html.erb",793]]
 
 	def is_advertisement?
