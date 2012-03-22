@@ -7,7 +7,7 @@ class Widget < ActiveRecord::Base
 	validates_presence_of :filename, :unless => Proc.new{|w| w.is_advertisement?}  
 	validates_length_of :name, :maximum => 255
 	validates_presence_of :name, :width, :widget_type
-	validate :json_format
+	validate :json_format, :unless => lambda {|widget| widget.new_record? }
 		
 	FILETYPES = [
 		["header", "/widgets/header.html.erb",966],
@@ -23,7 +23,7 @@ class Widget < ActiveRecord::Base
 		["Video gallery", "/widgets/video_gallery.html.erb",793]]
 
 	before_save {|widget|
-			widget.properties = JSON["#{widget.properties}"] unless widget.properties.blank?
+			widget.properties = JSON["#{widget.properties}"] if !widget.new_record?
 	}
 	def is_advertisement?
 		widget_type == WidgetType::TYPES["Advertisement"]
