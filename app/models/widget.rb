@@ -2,6 +2,7 @@ class Widget < ActiveRecord::Base
 	has_many :holdings, :dependent => :destroy
 	has_many :collections, :dependent => :destroy
 	has_many :placeholders, :through => :holdings
+        belongs_to :widget_type, :foreign_key => :widget_type
 	serialize :properties, Hash
 	
 	validates_presence_of :filename, :unless => Proc.new{|w| w.is_advertisement?}  
