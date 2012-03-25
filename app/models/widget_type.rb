@@ -1,5 +1,4 @@
 class WidgetType < ActiveRecord::Base
- has_many :widgets
 	
 	TYPES =	{
 		 "Regular" => 1,
