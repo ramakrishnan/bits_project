@@ -8,7 +8,7 @@ layout 'admin'
 		end		
 		@page = Page.new(params[:page])
 		Page.transaction do
-		 @page.save
+		 if @page.save
 			rows.each do |row, columns|
 				columns.each_with_index do |grid, index|
 					index = index + 1
@@ -16,13 +16,16 @@ layout 'admin'
 						:grid_id => grid)
 				end
 			end
-		  end
-		 if @page.save 
-			redirect_to admin_pages_path
-		 else
-			flash[:message] = "Please check the following fields"
-			render :action => "new"
-		 end
+		 else			
+			flash[:message] = "Please check the following fields"	
+			@grids = Grid.all			
+			render :action => "new"		 
+		 end			
+		end
+
+
+
+
 	end
 	
 	def edit
