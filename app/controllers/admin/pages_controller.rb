@@ -16,6 +16,7 @@ layout 'admin'
 						:grid_id => grid)
 				end
 			end
+			redirect_to admin_pages_path
 		 else			
 			flash[:message] = "Please check the following fields"	
 			@grids = Grid.all			
